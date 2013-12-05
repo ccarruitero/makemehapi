@@ -1,0 +1,39 @@
+Create a hapi server that listens on port 8080 and outputs
+"Hello Hapi" when someone makes a GET request to /
+
+
+When you have completed your server, you can run it in the test
+environment with:
+
+  {bold}{appname} run server.js{/bold}
+
+And once you are ready to verify it then run:
+
+  {bold}{appname} verify server.js{/bold}
+
+
+-----------------------------------------------------------------
+
+HINT
+
+Create a server that listens on port 8080 with the following code:
+
+var hapi = require('hapi');
+var server = new hapi.Server(8080);
+
+
+Add a route by calling the server route function and passing a route:
+
+server.route({
+    method: 'GET',
+    path: '/',
+    handler: function () {
+        this.reply('My Reply');
+    }
+});
+
+
+After you have added the appropriate route and handler, start
+the server with the following code:
+
+server.start();
