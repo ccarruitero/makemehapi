@@ -7,10 +7,8 @@
   },
   "licenses": [
     {
-      "type": {
         "type": "BSD",
         "url": "http://github.com/spumko/makemehapi/raw/master/LICENSE"
-      }
     }
   ],
   "bin": "./makemehapi.js",
