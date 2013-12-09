@@ -11,9 +11,9 @@ module.exports = function (run) {
 
     setTimeout(function () {
 
-        hyperquest.get('http://localhost:8080').pipe(submissionOut);
+        hyperquest.get('http://localhost:8080/world').pipe(submissionOut);
         if (!run) {
-            hyperquest.get('http://localhost:8081').pipe(solutionOut);
+            hyperquest.get('http://localhost:8081/world').pipe(solutionOut);
         }
     }, 500);
 
