@@ -17,16 +17,10 @@
   "engines": {
     "node": "0.10.x"
   },
-  "scripts": {
-    "test": "make test-cov"
-  },
   "dependencies": {
     "workshopper": "0.4.x",
     "hyperquest": "0.1.x",
     "hapi": "1.20.x"
-  },
-  "devDependencies": {
-    "lab": "1.x.x"
   },
   "peerDependencies": {},
   "keywords": [
