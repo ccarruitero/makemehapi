@@ -18,7 +18,8 @@
   "dependencies": {
     "workshopper": "0.4.x",
     "hyperquest": "0.1.x",
-    "hapi": "1.20.x"
+    "hapi": "1.20.x",
+    "furball": "0.3.3"
   },
   "peerDependencies": {},
   "keywords": [

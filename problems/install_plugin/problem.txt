@@ -1,0 +1,23 @@
+Create a hapi server that listens on port 8080 and has the
+furball version 0.3.3 plugin installed and required.
+
+
+When you have completed your server, you can run it in the test
+environment with:
+
+  {bold}{appname} run server.js{/bold}
+
+And once you are ready to verify it then run:
+
+  {bold}{appname} verify server.js{/bold}
+
+-----------------------------------------------------------------
+
+HINT
+
+npm install furball then require the plugin using the following:
+
+
+var server = new Hapi.Server(8080);
+server.pack.require('furball', function (err) { });
+server.start();
