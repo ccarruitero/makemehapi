@@ -1,4 +1,4 @@
-# makemehapi
+# Make Me Hapi
 
 Learn all about [hapi](http://hapijs.com) through a series of challenges.
 
