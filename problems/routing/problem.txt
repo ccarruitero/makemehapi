@@ -16,13 +16,9 @@ And once you are ready to verify it then run:
 
 HINT
 
-Create a server that listens on port 8080 with the following route:
+Create a server that listens on port 8080 with a route handler
+similar to the following:
 
-
-server.route({
-    method: 'GET',
-    path: '/{name}',
-    handler: function () {
-        this.reply('Hello ' + this.params.name);
-    }
-});
+function handler () {
+    this.reply('Hello ' + this.params.name);
+}

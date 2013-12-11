@@ -22,16 +22,9 @@ var hapi = require('hapi');
 var server = new hapi.Server(8080);
 
 
-Add a route by calling the server route function and passing a route:
+Add a route by calling the server route function and passing a route object:
 
-server.route({
-    method: 'GET',
-    path: '/',
-    handler: function () {
-        this.reply('My Reply');
-    }
-});
-
+server.route(routeObject);
 
 After you have added the appropriate route and handler, start
 the server with the following code:

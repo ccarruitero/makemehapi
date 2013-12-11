@@ -15,9 +15,6 @@ And once you are ready to verify it then run:
 
 HINT
 
-npm install furball then require the plugin using the following:
+npm install furball then require the plugin using pack require function:
 
-
-var server = new Hapi.Server(8080);
-server.pack.require('furball', function (err) { });
-server.start();
+server.pack.require();
