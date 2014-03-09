@@ -19,6 +19,6 @@ HINT
 Create a server that listens on port 8080 with a route handler
 similar to the following:
 
-function handler () {
-    this.reply('Hello ' + this.params.name);
+function handler (request, reply) {
+    reply('Hello ' + request.params.name);
 }

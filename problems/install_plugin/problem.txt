@@ -1,5 +1,5 @@
 Create a hapi server that listens on port 8080 and has the
-furball version 0.3.3 plugin installed and required.
+furball version 1.0.0 plugin installed and required.
 
 
 When you have completed your server, you can run it in the test

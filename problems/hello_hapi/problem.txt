@@ -18,8 +18,8 @@ HINT
 
 Create a server that listens on port 8080 with the following code:
 
-var hapi = require('hapi');
-var server = new hapi.Server(8080);
+var Hapi = require('hapi');
+var server = Hapi.createServer('localhost', 8080);
 
 
 Add a route by calling the server route function and passing a route object:
