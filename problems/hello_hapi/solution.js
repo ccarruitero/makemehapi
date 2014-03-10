@@ -1,6 +1,10 @@
 var Hapi = require('hapi');
-var server = new Hapi.Server(8081);
-server.route({ method: 'GET', path: '/', handler: function () {
-    this.reply('Hello Hapi');
-}});
+var server = Hapi.createServer('localhost', 8081);
+server.route({
+	method: 'GET',
+	path: '/',
+	handler: function (request, reply) {
+    	reply('Hello Hapi');
+	}
+});
 server.start();
