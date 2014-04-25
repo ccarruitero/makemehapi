@@ -1,6 +1,6 @@
 {
   "name": "makemehapi",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/spumko/makemehapi"
@@ -16,13 +16,16 @@
     "node": "0.10.x"
   },
   "dependencies": {
-    "workshopper": "0.4.x",
+    "workshopper": "^1.0.0-alpha05",
+    "workshopper-exercise": "^0.2.2",
+    "workshopper-wrappedexec": "^0.1.1",
+    "workshopper-boilerplate": "0.0.1",
     "hyperquest": "0.1.x",
     "hapi": "1.20.x",
     "furball": "0.3.3"
   },
   "peerDependencies": {},
   "keywords": [
-    "spumko"
+    "spumko", "hapi"
   ]
 }
