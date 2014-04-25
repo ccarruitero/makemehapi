@@ -1,0 +1,1 @@
+static directories, using depth on a configuration
