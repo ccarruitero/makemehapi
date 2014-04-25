@@ -21,8 +21,7 @@
     "workshopper-wrappedexec": "^0.1.1",
     "workshopper-boilerplate": "0.0.1",
     "hyperquest": "0.1.x",
-    "hapi": "1.20.x",
-    "furball": "0.3.3"
+    "hapi": "4.x.x"
   },
   "peerDependencies": {},
   "keywords": [
