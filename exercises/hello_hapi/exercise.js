@@ -1,8 +1,8 @@
-var exercise      = require('workshopper-exercise')();
-var filecheck     = require('workshopper-exercise/filecheck');
-var execute       = require('workshopper-exercise/execute');
+var exercise = require('workshopper-exercise')();
+var filecheck = require('workshopper-exercise/filecheck');
+var execute = require('workshopper-exercise/execute');
 var comparestdout = require('workshopper-exercise/comparestdout');
-var compareserver = require('lib/comparestdout');
+// var compareserver = require('lib/comparestdout');
 
 
 // checks that the submission file actually exists

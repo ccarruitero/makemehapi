@@ -1,5 +1,7 @@
 Create a hapi server that listens on port 8080 and replies with 
-"Hello Hapi" when an HTTP GET request is sent to /
+"Hello Hapi" when an HTTP GET request is sent to /.
+
+The workshop will execute requests against the server and verify the output.
 
 -----------------------------------------------------------------
 ##HINTS
