@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-const Workshopper = require('workshopper');
-const path = require('path');
-const credits = require('./credits');
-const menu = require('./exercises/menu');
+var Workshopper = require('workshopper');
+var path = require('path');
+var credits = require('./credits');
+var menu = require('./exercises/menu');
 
-const name = 'makemehapi';
-const title = 'REST WELL WITH HAPI';
-const subtitle = '\x1b[23mSelect an exercise and hit \x1b[3mEnter\x1b[23m to begin';
+var name = 'makemehapi';
+var title = 'REST WELL WITH HAPI';
+var subtitle = '\x1b[23mSelect an exercise and hit \x1b[3mEnter\x1b[23m to begin';
 
 
 function fpath (f) {

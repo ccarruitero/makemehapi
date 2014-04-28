@@ -1,6 +1,6 @@
-const Fs = require('fs');
-const Path = require('path');
-const Colors = require('colors-tmpl');
+var Fs = require('fs');
+var Path = require('path');
+var Colors = require('colors-tmpl');
 
 
 function credits () {
