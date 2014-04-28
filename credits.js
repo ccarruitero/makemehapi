@@ -7,7 +7,7 @@ function credits () {
 
   Fs.readFile(Path.join(__dirname, './credits.txt'), 'utf8', function (err, data) {
 
-    if(err) {
+    if (err) {
       throw err;
     }
 
