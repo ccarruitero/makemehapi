@@ -2,5 +2,5 @@
 
 {bold}Name                GitHub Username{/bold}
 -----------------------------------
-Wyatt Lyon-Preul
+Wyatt Lyon Preul          @wpreul
 Ben Acker                 @nvcexploder
