@@ -10,5 +10,6 @@ Workshopper({
     name: 'makemehapi',
     title: 'Make Me Hapi',
     appDir: __dirname,
-    helpFile : Path.join(__dirname, 'help.txt')
-}).init();
+    helpFile : Path.join(__dirname, 'help.txt'),
+    exerciseDir: Path.join(__dirname, 'exercises')
+});

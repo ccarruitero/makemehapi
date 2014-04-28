@@ -1,4 +1,8 @@
+<a href="https://github.com/spumko"><img src="https://raw.github.com/spumko/spumko/master/images/from.png" align="right" /></a>
+
 # Make Me Hapi
+
+[![NPM](https://nodei.co/npm/makemehapi.png?downloads=true&stars=true)](https://nodei.co/npm/makemehapi/)
 
 Learn all about [hapi](http://hapijs.com) through a series of challenges.
 
