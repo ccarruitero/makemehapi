@@ -1,15 +1,31 @@
 #!/usr/bin/env node
 
-// Require modules
-
 var Workshopper = require('workshopper');
-var Path = require('path');
+var path = require('path');
+var credits = require('./credits');
+var menu = require('./exercises/menu');
+
+var name = 'makemehapi';
+var title = 'REST WELL WITH HAPI';
+var subtitle = '\x1b[23mSelect an exercise and hit \x1b[3mEnter\x1b[23m to begin';
+
+
+function fpath (f) {
+
+  return path.join(__dirname, f);
+}
 
 
 Workshopper({
-    name: 'makemehapi',
-    title: 'Make Me Hapi',
-    appDir: __dirname,
-    helpFile : Path.join(__dirname, 'help.txt'),
-    exerciseDir: Path.join(__dirname, 'exercises')
+    name : name,
+    title : title,
+    subtitle : subtitle,
+    exerciseDir : fpath('./exercises/'),
+    appDir : __dirname,
+    helpFile : fpath('help.txt'),
+    menu : [{
+        name : 'credits',
+        handler : credits
+    }],
+    menuOptions : {}
 });

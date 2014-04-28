@@ -7,8 +7,8 @@
   },
   "licenses": [
     {
-        "type": "BSD",
-        "url": "http://github.com/spumko/makemehapi/raw/master/LICENSE"
+      "type": "BSD",
+      "url": "http://github.com/spumko/makemehapi/raw/master/LICENSE"
     }
   ],
   "bin": "./makemehapi.js",
@@ -21,10 +21,12 @@
     "workshopper-wrappedexec": "^0.1.1",
     "workshopper-boilerplate": "0.0.1",
     "hyperquest": "0.1.x",
-    "hapi": "4.x.x"
+    "hapi": "4.x.x",
+    "colors-tmpl": "0.1.0"
   },
   "peerDependencies": {},
   "keywords": [
-    "spumko", "hapi"
+    "spumko",
+    "hapi"
   ]
 }
