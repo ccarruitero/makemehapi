@@ -23,9 +23,9 @@ Workshopper({
     exerciseDir : fpath('./exercises/'),
     appDir : __dirname,
     helpFile : fpath('help.txt'),
-    menu : [ {
+    menu : [{
         name : 'credits',
         handler : credits
-    } ],
+    }],
     menuOptions : {}
 });
