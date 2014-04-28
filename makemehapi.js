@@ -17,14 +17,14 @@ function fpath (f) {
 
 
 Workshopper({
-    name        : name,
-    title       : title,
-    subtitle    : subtitle,
+    name : name,
+    title : title,
+    subtitle : subtitle,
     exerciseDir : fpath('./exercises/'),
-    appDir      : __dirname,
-    helpFile    : fpath('help.txt'),
-    menu        : [ {
-        name    : 'credits',
+    appDir : __dirname,
+    helpFile : fpath('help.txt'),
+    menu : [ {
+        name : 'credits',
         handler : credits
     } ],
     menuOptions : {}
