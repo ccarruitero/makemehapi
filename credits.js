@@ -1,5 +1,5 @@
-const Fs     = require('fs');
-const Path   = require('path');
+const Fs = require('fs');
+const Path = require('path');
 const Colors = require('colors-tmpl');
 
 
