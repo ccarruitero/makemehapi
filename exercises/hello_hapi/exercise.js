@@ -1,22 +1,20 @@
-var through2      = require('through2')
-    , hyperquest    = require('hyperquest')
-    , bl            = require('bl')
-    , exercise      = require('workshopper-exercise')()
-    , filecheck     = require('workshopper-exercise/filecheck')
-    , execute       = require('workshopper-exercise/execute')
-    , comparestdout = require('workshopper-exercise/comparestdout')
-
-    , date          = new Date(Date.now() - 100000)
+var through2 = require('through2');
+var hyperquest = require('hyperquest');
+var bl = require('bl');
+var exercise = require('workshopper-exercise')();
+var filecheck = require('workshopper-exercise/filecheck');
+var execute = require('workshopper-exercise/execute');
+var comparestdout = require('workshopper-exercise/comparestdout');
 
 
 // the output will be long lines so make the comparison take that into account
-exercise.longCompareOutput = true
+exercise.longCompareOutput = true;
 
 // checks that the submission file actually exists
-exercise = filecheck(exercise)
+exercise = filecheck(exercise);
 
 // execute the solution and submission in parallel with spawn()
-exercise = execute(exercise)
+exercise = execute(exercise);
 
 function rndport() {
 
@@ -26,32 +24,35 @@ function rndport() {
 
 // set up the data file to be passed to the submission
 exercise.addSetup(function (mode, callback) {
+
     this.submissionPort = rndport();
-    this.solutionPort   = this.submissionPort + 1
+    this.solutionPort = this.submissionPort + 1;
 
-    this.submissionArgs = [ this.submissionPort ]
-    this.solutionArgs   = [ this.solutionPort ]
+    this.submissionArgs = [this.submissionPort];
+    this.solutionArgs = [this.solutionPort];
 
-    process.nextTick(callback)
-})
+    process.nextTick(callback);
+});
 
 
 // add a processor for both run and verify calls, added *before*
 // the comparestdout processor so we can mess with the stdouts
 exercise.addProcessor(function (mode, callback) {
-    this.submissionStdout.pipe(process.stdout)
+
+    this.submissionStdout.pipe(process.stdout);
 
     // replace stdout with our own streams
-    this.submissionStdout = through2()
-    if (mode == 'verify')
-        this.solutionStdout = through2()
+    this.submissionStdout = through2();
+    if (mode == 'verify') {
+        this.solutionStdout = through2();
+    }
 
-    setTimeout(query.bind(this, mode), 500)
+    setTimeout(query.bind(this, mode), 500);
 
     process.nextTick(function () {
         callback(null, true)
-    })
-})
+    });
+});
 
 
 // compare stdout of solution and submission
@@ -67,14 +68,12 @@ function query (mode) {
 
         function error (err) {
 
-            exercise.emit(
-                'fail'
-                , 'Error connecting to http://localhost:' + port + ': ' + err.code
-            )
+            exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code)
         }
 
-        hyperquest.get('http://localhost:' + port + '/').on('error', error).pipe(
-            bl(function (err, data) {
+        hyperquest.get('http://localhost:' + port + '/')
+            .on('error', error)
+            .pipe(bl(function (err, data) {
 
                 if (err)
                     return stream.emit('error', err)
@@ -86,9 +85,10 @@ function query (mode) {
 
     verify(this.submissionPort, this.submissionStdout)
 
-    if (mode == 'verify')
-        verify(this.solutionPort, this.solutionStdout)
+    if (mode == 'verify') {
+        verify(this.solutionPort, this.solutionStdout);
+    }
 }
 
 
-module.exports = exercise
+module.exports = exercise;
