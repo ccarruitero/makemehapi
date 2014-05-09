@@ -64,13 +64,12 @@ function query (mode) {
     var exercise = this
 
     function verify (port, stream) {
-        function error (port, err) {
 
-            console.log(port, err);
+        function error (err) {
 
             exercise.emit(
                 'fail'
-                , 'Error connecting to http://localhost:' + port + ': ' + err.message
+                , 'Error connecting to http://localhost:' + port + ': ' + err.code
             )
         }
 
