@@ -1,53 +1,104 @@
-var exercise = require('workshopper-exercise')();
-var filecheck = require('workshopper-exercise/filecheck');
-var execute = require('workshopper-exercise/execute');
-var comparestdout = require('workshopper-exercise/comparestdout');
-// var compareserver = require('lib/comparestdout');
+var through2      = require('through2')
+    , hyperquest    = require('hyperquest')
+    , bl            = require('bl')
+    , exercise      = require('workshopper-exercise')()
+    , filecheck     = require('workshopper-exercise/filecheck')
+    , execute       = require('workshopper-exercise/execute')
+    , comparestdout = require('workshopper-exercise/comparestdout')
 
+    , date          = new Date(Date.now() - 100000)
+
+
+// the output will be long lines so make the comparison take that into account
+exercise.longCompareOutput = true
 
 // checks that the submission file actually exists
-exercise = filecheck(exercise);
+exercise = filecheck(exercise)
 
 // execute the solution and submission in parallel with spawn()
-exercise = execute(exercise);
+exercise = execute(exercise)
 
-//prepare the compareserver
-var compare_config = {
-    url: '/',
-    submission_port: 8080,
-    example_port: 8081
-};
+function rndport() {
+
+    return 1024 + Math.floor(Math.random() * 64511);
+}
+
+
+// set up the data file to be passed to the submission
+exercise.addSetup(function (mode, callback) {
+    this.submissionPort = rndport();
+    this.solutionPort   = this.submissionPort + 1
+
+    this.submissionArgs = [ this.submissionPort ]
+    this.solutionArgs   = [ this.solutionPort ]
+
+    process.nextTick(callback)
+})
+
+
+// add a processor for both run and verify calls, added *before*
+// the comparestdout processor so we can mess with the stdouts
+exercise.addProcessor(function (mode, callback) {
+    this.submissionStdout.pipe(process.stdout)
+
+    // replace stdout with our own streams
+    this.submissionStdout = through2()
+    if (mode == 'verify')
+        this.solutionStdout = through2()
+
+    setTimeout(query.bind(this, mode), 500)
+
+    process.nextTick(function () {
+        callback(null, true)
+    })
+})
+
 
 // compare stdout of solution and submission
-exercise = comparestdout(exercise);
+exercise = comparestdout(exercise)
 
 
+// delayed for 500ms to wait for servers to start so we can start
+// playing with them
+function query (mode) {
+    var exercise = this
 
-module.exports = exercise;
+    function verify (port, stream) {
+        function error (port, err) {
 
-// Require modules
+            console.log(port, err);
 
-// var PassThrough = require('stream').PassThrough;
-// var hyperquest = require('hyperquest');
+            exercise.emit(
+                'fail'
+                , 'Error connecting to http://localhost:' + port + ': ' + err.message
+            )
+        }
+
+        hyperquest.get('http://localhost:' + port + '/')
+            .on('error', error)
+            .pipe(bl(function (err, data) {
+                if (err)
+                    return stream.emit('error', err)
+
+                stream.write(data.toString() + '\n')
+
+                hyperquest.get('http://localhost:' + port + '/')
+                    .on('error', error)
+                    .pipe(bl(function (err, data) {
+                        if (err)
+                            return stream.emit('error', err)
+
+                        stream.write(data.toString() + '\n')
+                        stream.end()
+                    }))
+            }))
+    }
+
+    verify(this.submissionPort, this.submissionStdout)
+
+    if (mode == 'verify')
+        verify(this.solutionPort, this.solutionStdout)
+}
 
 
-// module.exports = function (run) {
-
-//     var submissionOut = new PassThrough();
-//     var solutionOut = new PassThrough();
-
-//     setTimeout(function () {
-
-//         hyperquest.get('http://localhost:8080').pipe(submissionOut);
-//         if (!run) {
-//             hyperquest.get('http://localhost:8081').pipe(solutionOut);
-//         }
-//     }, 500);
-
-//     return {
-//         submissionArgs: [8080],
-//         solutionArgs: [8081],
-//         a: submissionOut,
-//         b: solutionOut
-//     };
-// };
+module.exports = exercise
