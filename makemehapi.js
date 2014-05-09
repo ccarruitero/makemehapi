@@ -3,7 +3,6 @@
 var Workshopper = require('workshopper');
 var path = require('path');
 var credits = require('./credits');
-var menu = require('./exercises/menu');
 
 var name = 'makemehapi';
 var title = 'REST WELL WITH HAPI';
