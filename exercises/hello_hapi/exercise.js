@@ -73,24 +73,15 @@ function query (mode) {
             )
         }
 
-        hyperquest.get('http://localhost:' + port + '/')
-            .on('error', error)
-            .pipe(bl(function (err, data) {
+        hyperquest.get('http://localhost:' + port + '/').on('error', error).pipe(
+            bl(function (err, data) {
+
                 if (err)
                     return stream.emit('error', err)
 
-                stream.write(data.toString() + '\n')
-
-                hyperquest.get('http://localhost:' + port + '/')
-                    .on('error', error)
-                    .pipe(bl(function (err, data) {
-                        if (err)
-                            return stream.emit('error', err)
-
-                        stream.write(data.toString() + '\n')
-                        stream.end()
-                    }))
-            }))
+                stream.write(data.toString() + '\n');
+                stream.end();
+            }));
     }
 
     verify(this.submissionPort, this.submissionStdout)
