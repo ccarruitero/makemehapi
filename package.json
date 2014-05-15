@@ -13,10 +13,10 @@
   ],
   "bin": "./makemehapi.js",
   "engines": {
-    "node": "0.10.x"
+    "node": ">0.10.x"
   },
   "dependencies": {
-    "workshopper": "^1.0.0-alpha05",
+    "workshopper": "^1.0.0-alpha07",
     "workshopper-exercise": "^0.2.2",
     "workshopper-wrappedexec": "^0.1.1",
     "workshopper-boilerplate": "0.0.1",
