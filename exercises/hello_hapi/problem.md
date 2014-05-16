@@ -10,7 +10,7 @@ Create a server that listens on port 8080 with the following code:
 
 ```js
 var Hapi = require('hapi');
-var server = Hapi.createServer('localhost', 8080);
+var server = Hapi.createServer('localhost', Number(process.argv[2] || 8080));
 ```
 
 Routes are added via the `route` function:
