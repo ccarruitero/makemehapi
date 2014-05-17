@@ -1,5 +1,5 @@
-Create a hapi server that listens on port 8080 and serves a static index.html
-file from a public folder.
+Create a hapi server that uses the first argument passed in as the port and
+serves a static index.html file from a public folder.
 
 Create a folder named 'public' and add a 'index.html' file in the folder with
 the following contents:
