@@ -1,5 +1,5 @@
-Create a hapi server that listens on port 8080 and outputs
-"Hello [name]" where [name] is replaced with the path parameter
+Create a hapi server that uses the first argument passed in as the port and
+outputs "Hello [name]" where [name] is replaced with the path parameter
 supplied to GET /{name}
 
 
