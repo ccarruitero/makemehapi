@@ -1,6 +1,7 @@
 var through2 = require('through2');
 var hyperquest = require('hyperquest');
 var bl = require('bl');
+var workshopper = require('workshopper');
 var exercise = require('workshopper-exercise')();
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
@@ -66,13 +67,20 @@ function query (mode) {
 
     function verify (port, stream) {
 
-        function error (err) {
+        var url = 'http://localhost:' + port + '/foo/bar/baz/file.html';
 
+        function error (err) {
             exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code)
         }
 
-        hyperquest.get('http://localhost:' + port + '/foo/bar/baz/file.html')
+        hyperquest.get(url)
             .on('error', error)
+            .on('response', function(res) {
+                if (res.statusCode == 404) {
+                    exercise.emit('fail', 'Page not found at ' + url )
+                    workshopper.prototype.exerciseFail(null, exercise)
+                }
+            })
             .pipe(bl(function (err, data) {
 
                 if (err)
