@@ -1,7 +1,5 @@
-Create a Hapi server as in previous exercises.
-
-Create a folder named 'public' and add a 'file.html' file in the folder with
-the following contents:
+Create a server which routes requests to the path `/foo/bar/baz/file.html` to a
+file in a directory, e.g. `public/file.html`, which contains the following:
 
 ```html
 <html>
@@ -12,9 +10,6 @@ the following contents:
 </html>
 ```
 
-This file should be made available when the path '/foo/bar/baz/file.html' is
-requested.
-
 -----------------------------------------------------------------
 ##HINTS
 
@@ -22,7 +17,7 @@ Handlers can be declared as an object with a directory path:
 
 ```js
 handler: {
-    directory: { path: './public', listing: false }
+    directory: { path: './public' }
 }
 ```
 
