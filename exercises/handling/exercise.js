@@ -76,7 +76,7 @@ function query (mode) {
         hyperquest.get(url)
             .on('error', error)
             .on('response', function(res) {
-                if (res.statusCode == 404) {
+                if (res.statusCode == 404 && mode == 'verify') {
                     exercise.emit('fail', 'Page not found at ' + url )
                     workshopper.prototype.exerciseFail(null, exercise)
                 }
