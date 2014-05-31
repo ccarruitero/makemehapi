@@ -1,6 +1,5 @@
-Create a Hapi server as in previous exercises.
-
-Create an `index.html` file containing the following HTML.
+Create a server which responds to requests to `/` with a static HTML file
+containing the following:
 
 ```html
 <html>
@@ -10,8 +9,6 @@ Create an `index.html` file containing the following HTML.
     </body>
 </html>
 ```
-
-Requests to `/` should be routed to `index.html`.
 
 -----------------------------------------------------------------
 ##HINTS
@@ -23,6 +20,6 @@ For example, `handler` can be assigned an object with the `file` key:
 
 ```js
 handler: {
-    file: "foo.html"
+    file: "index.html"
 }
 ```
