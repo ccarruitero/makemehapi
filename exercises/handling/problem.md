@@ -1,5 +1,5 @@
-Create a server which responds to requests to `/` with a static HTML file
-containing the following:
+Create a server which responds to requests to `/` with a static HTML file named
+`index.html` containing the following:
 
 ```html
 <html>
