@@ -24,7 +24,8 @@
     "hapi": "4.x.x",
     "colors-tmpl": "0.1.0",
     "through2": "^0.4.1",
-    "bl": "^0.8.0"
+    "bl": "^0.8.0",
+    "handlebars": "1.3.*"
   },
   "peerDependencies": {},
   "keywords": [
