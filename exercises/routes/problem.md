@@ -6,11 +6,11 @@ supplied to GET /{name}
 When you have completed your server, you can run it in the test
 environment with:
 
-  {bold}{appname} run server.js{/bold}
+  {bold}{appname} run program.js{/bold}
 
 And once you are ready to verify it then run:
 
-  {bold}{appname} verify server.js{/bold}
+  {bold}{appname} verify program.js{/bold}
 
 -----------------------------------------------------------------
 ##HINTS
@@ -22,7 +22,7 @@ var Hapi = require('hapi');
 var server = Hapi.createServer('localhost', Number(process.argv[2] || 8080));
 ```
 
-Add a route handler route handler similar to the following:
+Add a route handler similar to the following:
 
 ```js
 function handler (request, reply) {
