@@ -9,7 +9,7 @@ var options = {
 
 var server = Hapi.createServer('localhost', Number(process.argv[2] || 8081), options);
 
-var ROT13Stream = function () {
+function ROT13Stream () {
     Stream.Transform.call(this);
 };
 Util.inherits(ROT13Stream, Stream.Transform);
