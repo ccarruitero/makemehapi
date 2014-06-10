@@ -10,6 +10,7 @@ var options = {
 var server = Hapi.createServer('localhost', Number(process.argv[2] || 8081), options);
 
 function ROT13Stream () {
+
     Stream.Transform.call(this);
 }
 Util.inherits(ROT13Stream, Stream.Transform);
@@ -70,6 +71,7 @@ ROT13Stream.table = {
 };
 
 ROT13Stream.prototype._transform = function (data, encoding, callback) {
+
     encoding = (encoding == 'buffer' ? 'utf8' : encoding);
     data = data.toString(encoding);
     
