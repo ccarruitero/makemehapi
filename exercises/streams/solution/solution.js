@@ -11,7 +11,7 @@ var server = Hapi.createServer('localhost', Number(process.argv[2] || 8081), opt
 
 function ROT13Stream () {
     Stream.Transform.call(this);
-};
+}
 Util.inherits(ROT13Stream, Stream.Transform);
 
 ROT13Stream.table = {
