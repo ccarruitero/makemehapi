@@ -17,6 +17,10 @@ Gur Chefhvg bs Uncv-arff
 
 The Hapi handler `reply` function can accept a stream as an argument.
 
+### File
+
+The `fs` module has a `createReadStream(pathToFile)` function that would be useful. 
+
 ### Simple ROT13
 
 Use sample code from `https://gist.github.com/thegoleffect/df70f2102f1b2e794550`.
