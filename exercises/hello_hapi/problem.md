@@ -16,7 +16,7 @@ var server = Hapi.createServer('localhost', Number(process.argv[2] || 8080));
 Routes are added via the `route` function:
 
 ```js
-server.route({method:'GET', handler: anonOrYourFunction});
+server.route({path: '/', method:'GET', handler: anonOrYourFunction});
 ```
 
 Handlers can be anonymous functions or separately declared (just like in javascript :P), but all of them should have this signature: 
