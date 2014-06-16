@@ -4,7 +4,7 @@ var options = {
     views: {
         path: 'templates',
         engines: {
-            html: 'handlebars'
+            html: require('handlebars')
         },
         helpersPath: 'helpers'
     }
