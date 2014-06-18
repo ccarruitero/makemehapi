@@ -7,12 +7,14 @@ query parameter.
 
 ```html
 <html>
-    <head><title>Hello Helping</title></head>
+    <head><title>Hello Helping!</title></head>
     <body>
-        Hello Helping
+        Hello Helping!
     </body>
 </html>
 ```
+
+based on the query string `?name=Helping&suffix=!`
 
 -----------------------------------------------------------------
 ##HINTS
@@ -32,12 +34,12 @@ var options = {
 };
 ```
 
-Each file must export a single method with the signature `function(context)` and
+Each file must export a single method with the signature `function()` and
 return a string.
 
 ```
-module.exports = function(context) {
-    return context.data.root.query.foo;
+module.exports = function() {
+    return this.query.foo;
 }
 ```
 

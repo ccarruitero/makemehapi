@@ -1,12 +1,14 @@
 var Hapi = require('hapi');
+var path = require('path')
+
 
 var options = {
     views: {
-        path: 'templates',
+        path:  path.join(__dirname, 'templates'),
         engines: {
             html: require('handlebars')
         },
-        helpersPath: 'helpers'
+        helpersPath:  path.join(__dirname, 'helpers')
     }
 };
 
