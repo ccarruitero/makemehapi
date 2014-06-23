@@ -67,7 +67,7 @@ function query (mode) {
 
     function verify (port, stream) {
 
-        var url = 'http://localhost:' + port + '/?name=Helping Test';
+        var url = 'http://localhost:' + port + '/?name=Helping Hands&suffix=!!';
 
         function error (err) {
             exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code)
