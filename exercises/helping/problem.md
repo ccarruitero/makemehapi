@@ -34,12 +34,12 @@ var options = {
 };
 ```
 
-Each file must export a single method with the signature `function()` and
+Each file must export a single method with the signature `function(context)` and
 return a string.
 
 ```
-module.exports = function() {
     return this.query.foo;
+module.exports = function(context) {
 }
 ```
 
