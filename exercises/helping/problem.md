@@ -1,5 +1,5 @@
-Create a server which responds to requests to `/?name=Helping` using the
-template from the VIEWS exercise.
+Create a server which responds to requests to `/?name=Helping&suffix=!` using
+the template from the VIEWS exercise.
 
 Instead of placing the query parameter directly in the template, create a helper
 at `helpers/helper.js` and use this helper in the template to output the `name`
@@ -14,7 +14,7 @@ query parameter.
 </html>
 ```
 
-based on the query string `?name=Helping&suffix=!`
+The helper should concatenate the `name` and `suffix` query parameters.
 
 -----------------------------------------------------------------
 ##HINTS
