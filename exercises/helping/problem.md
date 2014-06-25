@@ -38,8 +38,8 @@ Each file must export a single method with the signature `function(context)` and
 return a string.
 
 ```
-    return this.query.foo;
 module.exports = function(context) {
+    return context.data.root.query.foo;
 }
 ```
 
