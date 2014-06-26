@@ -15,6 +15,7 @@
   "engines": {
     "node": ">0.10.x"
   },
+  "description": "Self guided workshops to teach you about hapi.",
   "scripts": {
     "start": "node makemehapi.js"
   },
