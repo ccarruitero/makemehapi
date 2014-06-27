@@ -1,6 +1,6 @@
 {
   "name": "makemehapi",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/spumko/makemehapi"
@@ -26,10 +26,10 @@
     "workshopper-boilerplate": "0.0.1",
     "hyperquest": "0.1.x",
     "hapi": "6.x.x",
-    "colors-tmpl": "0.1.x",
-    "through2": "0.4.x",
-    "bl": "0.8.x",
-    "handlebars": "1.3.*",
+    "colors-tmpl": "0.1.0",
+    "through2": "^0.4.1",
+    "bl": "^0.8.0",
+    "handlebars": "2.x.x",
     "joi": "4.x.x"
   },
   "peerDependencies": {},
