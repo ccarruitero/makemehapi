@@ -1,6 +1,6 @@
 {
   "name": "makemehapi",
-  "version": "0.1.2",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/spumko/makemehapi"
@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "workshopper": "^1.0.0-alpha07",
-    "workshopper-exercise": "^0.2.2",
-    "workshopper-wrappedexec": "^0.1.1",
+    "workshopper-exercise": "0.2.x",
+    "workshopper-wrappedexec": "0.1.x",
     "workshopper-boilerplate": "0.0.1",
     "hyperquest": "0.1.x",
     "hapi": "6.x.x",

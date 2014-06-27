@@ -6,10 +6,10 @@
     "VIEWS",
     "PROXIES",
     "HELPING",
-    "STREAMS",
-    "UPLOADS",
-    "EXTEND",
-    "AUTHOME",
-    "STATIC_SERVING",
-    "VALIDATION"
+    "STREAMS"
+//    "UPLOADS",
+//    "EXTEND",
+//    "AUTHOME",
+//    "STATIC_SERVING",
+//    "VALIDATION"
 ]
