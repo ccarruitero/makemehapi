@@ -6,7 +6,7 @@ server.route({
     method: 'GET',
     path: '/foo/bar/baz/{filename}',
     handler: {
-        directory: {path: path.join(__dirname + '/public')}
+        directory: {path: path.join(__dirname, '/public')}
     }
 });
-server.start()
+server.start();
