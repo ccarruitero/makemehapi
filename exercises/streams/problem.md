@@ -23,4 +23,8 @@ The `fs` module has a `createReadStream(pathToFile)` function that would be usef
 
 ### Simple ROT13
 
-Use sample code from `https://gist.github.com/thegoleffect/df70f2102f1b2e794550`.
+In this exercise, we'll be using rot13-stream. To install rot13-stream:
+
+```sh
+npm install rot13-stream
+```
