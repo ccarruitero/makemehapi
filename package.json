@@ -20,17 +20,18 @@
     "start": "node makemehapi.js"
   },
   "dependencies": {
-    "workshopper": "^1.0.0-alpha07",
-    "workshopper-exercise": "0.2.x",
-    "workshopper-wrappedexec": "0.1.x",
-    "workshopper-boilerplate": "0.0.1",
-    "hyperquest": "0.1.x",
-    "hapi": "6.x.x",
-    "colors-tmpl": "0.1.0",
-    "through2": "^0.4.1",
     "bl": "^0.8.0",
+    "colors-tmpl": "0.1.0",
     "handlebars": "2.x.x",
-    "joi": "4.x.x"
+    "hapi": "6.x.x",
+    "hyperquest": "0.1.x",
+    "joi": "4.x.x",
+    "rot13-stream": "0.0.1",
+    "through2": "^0.4.1",
+    "workshopper": "^1.0.0-alpha07",
+    "workshopper-boilerplate": "0.0.1",
+    "workshopper-exercise": "0.2.x",
+    "workshopper-wrappedexec": "0.1.x"
   },
   "peerDependencies": {},
   "keywords": [
