@@ -6,7 +6,8 @@ The workshop will execute requests against the server and verify the output.
 -----------------------------------------------------------------
 ##HINTS
 
-Create a server that listens on port 8080 with the following code:
+Create a server that listens on port 8080, if none is passed from the
+command line,  with the following code:
 
 ```js
 var Hapi = require('hapi');
