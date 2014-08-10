@@ -7,5 +7,6 @@
     "PROXIES",
     "HELPING",
     "STREAMS",
-    "VALIDATION"
+    "VALIDATION",
+	  "VALIDATION USING JOI OBJECT"
 ]
