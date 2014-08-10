@@ -2,5 +2,6 @@
 
 {bold}Name                GitHub Username{/bold}
 -----------------------------------
+Lin Clark                 @linclark
 Wyatt Lyon Preul          @wpreul
 Ben Acker                 @nvcexploder
