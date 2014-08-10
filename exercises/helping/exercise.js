@@ -44,56 +44,57 @@ exercise.addProcessor(function (mode, callback) {
 
     // replace stdout with our own streams
     this.submissionStdout = through2();
-    if (mode == 'verify') {
+    if (mode === 'verify') {
         this.solutionStdout = through2();
     }
 
     setTimeout(query.bind(this, mode), 500);
 
     process.nextTick(function () {
-        callback(null, true)
+        callback(null, true);
     });
 });
 
 
 // compare stdout of solution and submission
-exercise = comparestdout(exercise)
+exercise = comparestdout(exercise);
 
 
 // delayed for 500ms to wait for servers to start so we can start
 // playing with them
 function query (mode) {
-    var exercise = this
+    var exercise = this;
 
     function verify (port, stream) {
 
-        var url = 'http://localhost:' + port + '/?name=Helping Test';
+        var url = 'http://localhost:' + port + '/?name=Helping Hands&suffix=!!';
 
         function error (err) {
-            exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code)
+            exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code);
         }
 
         hyperquest.get(url)
             .on('error', error)
             .on('response', function(res) {
-                if (res.statusCode != 200 && mode == 'verify') {
-                    exercise.emit('fail', 'Status code ' + res.statusCode + ' returned from url ' + url + ', expected 200.')
-                    workshopper.prototype.exerciseFail(null, exercise)
+                if (res.statusCode !== 200 && mode === 'verify') {
+                    exercise.emit('fail', 'Status code ' + res.statusCode + ' returned from url ' + url + ', expected 200.');
+                    workshopper.prototype.exerciseFail(null, exercise);
                 }
             })
             .pipe(bl(function (err, data) {
 
-                if (err)
-                    return stream.emit('error', err)
+                if (err) {
+                    return stream.emit('error', err);
+                }
 
                 stream.write(data.toString() + '\n');
                 stream.end();
             }));
     }
 
-    verify(this.submissionPort, this.submissionStdout)
+    verify(this.submissionPort, this.submissionStdout);
 
-    if (mode == 'verify') {
+    if (mode === 'verify') {
         verify(this.solutionPort, this.solutionStdout);
     }
 }

@@ -4,6 +4,8 @@
 
 [![NPM](https://nodei.co/npm/makemehapi.png?downloads=true&stars=true)](https://nodei.co/npm/makemehapi/)
 
+Lead Maintainer: [Wyatt Preul](https://github.com/wpreul)
+
 Learn all about [hapi](http://hapijs.com) through a series of challenges.
 
 ![makemehapi](https://raw.github.com/spumko/makemehapi/master/images/makemehapi.png)
