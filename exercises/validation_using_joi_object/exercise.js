@@ -12,11 +12,8 @@ exercise.longCompareOutput = true;
 // checks that the submission file actually exists
 exercise = filecheck(exercise);
 
-//for(var i = 0; i < 2; i++) {
-	// execute the solution and submission in parallel with spawn()
-	exercise = execute(exercise);
-
-//}
+// execute the solution and submission in parallel with spawn()
+exercise = execute(exercise);
 
 function rndport() {
 
@@ -40,60 +37,71 @@ exercise.addSetup(function (mode, callback) {
 // add a processor for both run and verify calls, added *before*
 // the comparestdout processor so we can mess with the stdouts
 exercise.addProcessor(function (mode, callback) {
-	    this.submissionStdout.pipe(process.stdout);
 
-	    // replace stdout with our own streams
-	    this.submissionStdout = through2();
-	    if (mode == 'verify') {
-		    this.solutionStdout = through2();
-	    }
+    this.submissionStdout.pipe(process.stdout);
 
-	    setTimeout(query.bind(this, mode), 500);
+    // replace stdout with our own streams
+    this.submissionStdout = through2();
+    if (mode == 'verify') {
+        this.solutionStdout = through2();
+    }
+
+    setTimeout(query.bind(this, mode), 500);
+
     process.nextTick(function () {
-        callback(null, true)
+        callback(null, true);
     });
 });
 
 
 // compare stdout of solution and submission
-exercise = comparestdout(exercise)
+exercise = comparestdout(exercise);
 
 
 // delayed for 500ms to wait for servers to start so we can start
 // playing with them
 function query (mode) {
-    var exercise = this
+
+    var exercise = this;
 
     function verify (port, stream) {
-	    var input = through2()
+
+        var input = through2();
+        
         function error (err) {
 
-            exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code)
+            exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code);
         }
 
-	      var url = 'http://localhost:' + port + '/login'
+        var url = 'http://localhost:' + port + '/login';
+
         input.pipe(hyperquest.post(url)
             .on('error', error))
-	          .pipe(bl(function (err, data) {
+            .pipe(bl(function (err, data) {
 
-                if (err)
-                    return stream.emit('error', err)
+                if (err) {
+                    return stream.emit('error', err);
+                }
 
                 stream.write(data.toString() + '\n');
                 stream.end();
             }));
-	      input.write(JSON.stringify({
-		      isguest: false,
-		      username : 'erererer',
-		      password : 'dfdfdfdf12'
-	      }));
-	      input.end()
-      }
-	    verify(this.submissionPort, this.submissionStdout)
-	    if (mode == 'verify') {
-		    verify(this.solutionPort, this.solutionStdout);
-	    }
+        
+        var message = {
+            isGuest: false,
+            username: 'hapi',
+            password: 'makemehapi'
+        };
 
+        input.write(JSON.stringify(message));
+        input.end();
+    }
+
+    verify(this.submissionPort, this.submissionStdout);
+
+    if (mode == 'verify') {
+        verify(this.solutionPort, this.solutionStdout);
+    }
 }
 
 
