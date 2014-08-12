@@ -8,10 +8,10 @@ using 'POST' method. Specifically:
 /login
 ```
 
-login endpoint will accept isguest (boolean), username (string), access_token (alphanumeric) and 
+login endpoint will accept isGuest (boolean), username (string), accessToken (alphanumeric) and 
 password (alphanumeric) in post request body. Validation should follow following condition
-i)   if ```isguest``` is false then username is required.
-ii)  ```password``` cannot appear together with ```access_token```. 
+i)   if ```isGuest``` is false then username is required.
+ii)  ```password``` cannot appear together with ```accessToken```. 
 iii) if any parameters other than specified above are sent then it should allow by validation.
 
 The solution will just check that a Validation Joi object exists within the configuration of  api, not any specific validation.
@@ -22,6 +22,7 @@ The solution will just check that a Validation Joi object exists within the conf
 Create a server that listens on port 8080 with the following code:
 
 ```js
+
 var routeConfig = {
     path: '/a/path/',
     method: 'POST',
@@ -31,10 +32,10 @@ var routeConfig = {
            payload : Joi.object()({
                 username: Joi.string(),
                 password: Joi.string().alphanum(),
-                access_token: Joi.string().alphanum(),
+                accessToken: Joi.string().alphanum(),
                 birthyear: Joi.number().integer().min(1900).max(2013),
                 email: Joi.string().email()
-           }).options({allowUnknown: true}).with('username', 'birthyear').without('password', 'access_token');.
+           }).options({allowUnknown: true}).with('username', 'birthyear').without('password', 'accessToken');.
         }
     }
 }
