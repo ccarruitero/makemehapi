@@ -22,6 +22,7 @@
   "dependencies": {
     "bl": "^0.8.0",
     "colors-tmpl": "0.1.0",
+    "form-data": "^0.1.4",
     "handlebars": "2.x.x",
     "hapi": "6.x.x",
     "hyperquest": "0.1.x",
