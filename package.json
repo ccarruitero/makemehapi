@@ -3,12 +3,12 @@
   "version": "0.2.4",
   "repository": {
     "type": "git",
-    "url": "git://github.com/spumko/makemehapi"
+    "url": "git://github.com/hapijs/makemehapi"
   },
   "licenses": [
     {
       "type": "BSD",
-      "url": "http://github.com/spumko/makemehapi/raw/master/LICENSE"
+      "url": "http://github.com/hapijs/makemehapi/raw/master/LICENSE"
     }
   ],
   "bin": "./makemehapi.js",
@@ -36,7 +36,7 @@
   },
   "peerDependencies": {},
   "keywords": [
-    "spumko",
+    "hapijs",
     "hapi"
   ]
 }
