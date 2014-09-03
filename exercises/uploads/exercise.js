@@ -68,8 +68,6 @@ function query (mode) {
 
   function verify (port, stream) {
 
-    var input = through2();
-
     function error (err) {
 
       exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code);
@@ -78,8 +76,8 @@ function query (mode) {
     var url = 'http://localhost:' + port + '/upload';
 
     var form = new formData()
-    form.append('username', 'hapijs')
-    form.append('file', fs.createReadStream(__dirname + '/problem.md'))
+    form.append('description', 'makemehapi')
+    form.append('file', fs.createReadStream(__dirname + '/solution/input.txt'))
     
     form.pipe(hyperquest(url, {
       method: 'post',
@@ -91,7 +89,7 @@ function query (mode) {
           return stream.emit('error', err);
         }
 
-        stream.write(data.toString() + '\n');
+        stream.write(data.toString());
         stream.end();
       }));
 

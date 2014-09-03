@@ -1,16 +1,14 @@
-Create a server that has a route configuration exposing a upload endpoint which can be access 
-using 'POST' method. Specifically:
+Create a server that has a route configuration exposing a upload endpoint which can be access using 'POST' method. Specifically:
 
 ```
 /upload
 ```
 
-form with username (string) and file (file) can be submitted to upload endpoint, upload endpoint only accept ```multipart/form-data``` 
-content-type request.On form submit request to upload endpoint following response is expected
+form with description (string) and file (file) can be submitted to upload endpoint, upload endpoint only accept ```multipart/form-data``` content-type request. On form submit request to upload endpoint following response is expected
 
 ```json
 {
-  username :  //username from form
+  description :  //description from form
   file : {
     data :    //content of file uploaded 
     filename:  //name of file uploaded
@@ -22,14 +20,21 @@ content-type request.On form submit request to upload endpoint following respons
 -----------------------------------------------------------------
 ##HINTS
 
-Create a server that listens on port 8080 with the following code:
+We can get file as readable stream by adding following config in route   
 
 ```js
 
-var routeConfig = {
-  path: '/a/path/',
-  method: 'POST',
-  handler: function (request, reply) {
+config: {
+    output : 'stream',
+    parse : true
+}
+
+```
+
+If file uploaded with parameter ```file``` then we can read it in handler function from route using following code
+   
+```js
+handler: function (request, reply) {
     var body = '';
     request.payload.file.on('data', function (data){
       
@@ -39,16 +44,9 @@ var routeConfig = {
 
       console.log(body) 
     })
-  },
-  config: {
-    output : 'stream',
-    parse : true
-  }
 }
+
 ```
 
-
-
-Route information can be found in the Hapi directory
-in `node_modules` under Reference.md.
+More information about handling file upload can be found in the Hapi directory in `node_modules` under Reference.md.
 

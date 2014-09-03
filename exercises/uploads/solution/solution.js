@@ -1,7 +1,3 @@
-/**
- * Created by chetandhembre on 20/8/14.
- */
-
 var Hapi = require('hapi')
 
 
@@ -23,7 +19,7 @@ server.route({
       request.payload.file.on('end', function (){
 
         var ret = {
-          username: request.payload.username,
+          description: request.payload.description,
           file: {
             data: body,
             filename: request.payload.file.hapi.filename,
