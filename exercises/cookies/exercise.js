@@ -65,28 +65,31 @@ function query (mode) {
   function verify (port, stream) {
 
     function error (err) {
+
       exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code)
     }
 
 
-    var loginUrl = 'http://localhost:' + port + '/login';
-    var profileUrl = 'http://localhost:' + port + '/profile';
+    var setCookiesUrl = 'http://localhost:' + port + '/set-cookie';
+    var checkCookiesUrl = 'http://localhost:' + port + '/check-cookie';
     
-    hyperquest.get(loginUrl)
+    hyperquest.get(setCookiesUrl)
       .on('error', error)
       .on('response', function(res) {
+
         if (res.statusCode != 200 && mode == 'verify') {
-          exercise.emit('fail', 'Status code ' + res.statusCode + ' returned from url ' + url + ', expected 200.')
+          exercise.emit('fail', 'Status code ' + res.statusCode + ' returned from url ' + setCookiesUrl + ', expected 200.')
           workshopper.prototype.exerciseFail(null, exercise)
         } else {
           stream.write(JSON.stringify(res.headers['set-cookie']) + '\n')
-          hyperquest.get(profileUrl, {
+          hyperquest.get(checkCookiesUrl, {
             headers : {Cookie : res.headers['set-cookie']}
           })
           .pipe(bl(function (err, data) {
 
-            if (err)
+            if (err) {
               return stream.emit('error', err)
+            }
 
             stream.write(data.toString());
             stream.end();

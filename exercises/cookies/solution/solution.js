@@ -1,35 +1,37 @@
-/**
- * Created by chetandhembre on 20/8/14.
-*/
+var Hapi = require('hapi');
 
+var options = {
+  state: {
+    cookies: {
+      parse: true ,
+      failAction: 'log'
+    }
+  }
+};
 
-var Hapi = require('hapi')
-
-var server = Hapi.createServer('localhost', Number(process.argv[2] || 8000), { state: { cookies: { parse: true , failAction: 'log'} } });
+var server = Hapi.createServer('localhost', Number(process.argv[2] || 8000), options);
 
 
 server.state('session', {
-  path : '/{path*}',
+  path: '/{path*}',
   encoding: 'base64json',
   ttl: 10,
-	domain: 'localhost'
+  domain: 'localhost'
 });
 
 
 server.route(
   {
     method: 'GET',
-    path: '/login',
+    path: '/set-cookie',
     config: {
       handler: function (request, reply) {
 
-	      console.log('dfdf')
-        var session = { user: 'joe' };
         return reply({
           message : 'success'
         }).state('session', {
-            key : 'makemehapi'
-        })
+          key : 'makemehapi'
+        });
       }
     }
   }
@@ -38,20 +40,20 @@ server.route(
 server.route(
   {
     method: 'GET',
-    path: '/profile',
+    path: '/check-cookie',
     config: {
       handler: function (request, reply) {
         
-        var session = request.state.session
+        var session = request.state.session;
         var result;
         if (session) {
           result = {   
             user : 'hapi'
-          }
+          };
         } else {
-          result = new Hapi.error.unauthorized('Missing authentication')
+          result = new Hapi.error.unauthorized('Missing authentication');
         }
-        reply(result)            
+        reply(result);
       }
     }
   }
