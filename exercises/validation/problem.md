@@ -25,10 +25,12 @@ var routeConfig = {
     path: '/a/path/{with}/{parameters}',
     method: 'GET',
     handler: myHandler,
-    validate: {
-        params: {
-            with: Joi.string().required(),
-            parameters: Joi.string().required()
+    config: {
+        validate: {
+            params: {
+                with: Joi.string().required(),
+                parameters: Joi.string().required()
+            }
         }
     }
 }
