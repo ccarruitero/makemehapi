@@ -28,19 +28,23 @@ var routeConfig = {
     handler: myHandler,
     config: {
         validate: {
-           payload : Joi.object({
+           payload: Joi.object({
                 username: Joi.string(),
                 password: Joi.string().alphanum(),
                 accessToken: Joi.string().alphanum(),
                 birthyear: Joi.number().integer().min(1900).max(2013),
                 email: Joi.string().email()
-           }).options({allowUnknown: true}).with('username', 'birthyear').without('password', 'accessToken');
+           })
+           .options({allowUnknown: true})
+           .with('username', 'birthyear')
+           .without('password', 'accessToken')
         }
     }
 }
 ```
 
 Route information can be found in the Hapi directory
-in `node_modules/hapi/docs/Reference.md`.
+`node_modules/hapi/docs/Reference.md`
 
-Joi information can be found in `node_modules/hapi/node_modules/joi/README.md`.
+Joi information can be found in
+`node_modules/hapi/node_modules/joi/README.md`
