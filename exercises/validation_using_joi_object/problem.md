@@ -1,16 +1,19 @@
-We can use Joi to verify endpoints. By using a Joi object we can specify very customizable validation in path, request payloads, and responses.
+By using a Joi object we can specify highly customizable validation rules in paths, request payloads, and responses.
 
-Create a server that has a route configuration exposing an endpoint login which can be accessed using a 'POST' method. Specifically:
+Create a server exposing a login endpoint and reply with "login successful" when an HTTP POST request is sent to `/login`.
 
-```
-/login
-```
+The endpoint will accept following payload variables:
 
-login endpoint will accept isGuest (boolean), username (string), accessToken (alphanumeric) and
-password (alphanumeric) in post request body. Validation should follow following condition
-i)   if ```isGuest``` is false then username is required.
+```isGuest```       (boolean)
+```username```      (string)
+```accessToken```   (alphanumeric)
+```password```      (alphanumeric)
+
+Validation should consist of following conditions:
+
+i)   if ```isGuest``` is false, a ```username``` is required.
 ii)  ```password``` cannot appear together with ```accessToken```.
-iii) if any parameters other than specified above are sent then it should allow by validation.
+iii) if any other parameters than specified above are sent, they should pass the validation.
 
 -----------------------------------------------------------------
 ##HINTS
