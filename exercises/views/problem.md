@@ -22,19 +22,18 @@ handler: {
 }
 ```
 
-`createServer` takes an options object as a third parameter. Using this options
-object, you can configure the server to use different templating engines based
-on file extension. You can also define a directory path for templates.
+`server.views()` is the server method that we use to configure the templates
+used on our server. This method receives a configuration object in which we can
+set different engines based on file extension. This object can also set a
+directory path for your templates.
 
 ```js
-var options = {
-    views: {
-        path: 'templates',
-        engines: {
-            html: require('handlebars')
-        }
-    }
-};
+server.views({
+    engines: {
+        html: require('handlebars')
+    },
+    path: Path.join(__dirname, 'templates')
+});
 ```
 
 In this exercise, we'll be using Handlebars. To install handlebars:
