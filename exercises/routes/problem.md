@@ -7,11 +7,11 @@ supplied to GET /{name}
 When you have completed your server, you can run it in the test
 environment with:
 
-  {bold}{appname} run program.js{/bold}
+  __{appname} run program.js__
 
 And once you are ready to verify it then run:
 
-  {bold}{appname} verify program.js{/bold}
+  __{appname} verify program.js__
 
 -----------------------------------------------------------------
 ##HINTS
