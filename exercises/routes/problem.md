@@ -7,11 +7,11 @@ supplied to GET /{name}
 When you have completed your server, you can run it in the test
 environment with:
 
-  {bold}{appname} run program.js{/bold}
+  makemehapi run program.js
 
 And once you are ready to verify it then run:
 
-  {bold}{appname} verify program.js{/bold}
+  makemehapi verify program.js
 
 -----------------------------------------------------------------
 ##HINTS
