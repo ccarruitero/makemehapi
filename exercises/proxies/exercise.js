@@ -34,7 +34,11 @@ exercise.addSetup(function (mode, callback) {
 
     // start the server being proxied to
     var Hapi = require('hapi');
-    var server = Hapi.createServer('localhost', 65535);
+    var server = new Hapi.Server();
+    server.connection({
+        host: 'localhost',
+        port: 65535
+    });
     server.route({
         method: 'GET',
         path: '/proxy',

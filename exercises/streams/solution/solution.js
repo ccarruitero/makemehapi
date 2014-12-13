@@ -3,7 +3,6 @@ var path = require('path');
 var Hapi = require('hapi');
 var rot13 = require('rot13-transform');
 var server = new Hapi.Server();
-
 server.connection({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)
