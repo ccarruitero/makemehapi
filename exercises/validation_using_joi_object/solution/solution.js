@@ -2,9 +2,13 @@
  * Created by chetandhembre on 10/8/14.
  */
 var Hapi = require('hapi');
+var server = new Hapi.Server();
 var Joi = require('joi');
+server.connection({
+    host: 'localhost',
+    port: Number(process.argv[2] || 8080)
+});
 
-var server = Hapi.createServer('localhost', Number(process.argv[2] || 8080));
 
 server.route({
     method: 'POST',
