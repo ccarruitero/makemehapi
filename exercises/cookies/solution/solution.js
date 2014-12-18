@@ -1,16 +1,10 @@
 var Hapi = require('hapi');
+var server = new Hapi.Server();
 
-var options = {
-  state: {
-    cookies: {
-      parse: true ,
-      failAction: 'log'
-    }
-  }
-};
-
-var server = Hapi.createServer('localhost', Number(process.argv[2] || 8000), options);
-
+server.connection({
+    host: 'localhost',
+    port: Number(process.argv[2] || 8080)
+});
 
 server.state('session', {
   path: '/{path*}',
@@ -19,45 +13,43 @@ server.state('session', {
   domain: 'localhost'
 });
 
-
 server.route(
   {
     method: 'GET',
     path: '/set-cookie',
+    handler: function (request, reply) {
+      return reply({
+        message : 'success'
+      }).state('session', {
+        key : 'makemehapi'
+      });
+    },
     config: {
-      handler: function (request, reply) {
-
-        return reply({
-          message : 'success'
-        }).state('session', {
-          key : 'makemehapi'
-        });
-      }
-    }
-  }
-)
-
-server.route(
-  {
-    method: 'GET',
-    path: '/check-cookie',
-    config: {
-      handler: function (request, reply) {
-        
-        var session = request.state.session;
-        var result;
-        if (session) {
-          result = {   
-            user : 'hapi'
-          };
-        } else {
-          result = new Hapi.error.unauthorized('Missing authentication');
-        }
-        reply(result);
+      state: {
+        parse: true ,
+        failAction: 'log'
       }
     }
   }
 );
 
-server.start();
+server.route(
+  {
+    method: 'GET',
+    path: '/check-cookie',
+    handler: function (request, reply) {
+      var session = request.state.session;
+      var result;
+      if (session) {
+        result = {
+          user : 'hapi'
+        };
+      } else {
+        result = new Hapi.error.unauthorized('Missing authentication');
+      }
+      reply(result);
+    }
+  }
+);
 
+server.start();

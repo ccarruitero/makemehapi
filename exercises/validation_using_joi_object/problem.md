@@ -1,7 +1,6 @@
-We can use a Joi to verify endpoints. By using a Joi object we can specified very customizable validation in path, request payloads, and responses.
+We can use Joi to verify endpoints. By using a Joi object we can specify very customizable validation in path, request payloads, and responses.
 
-Create a server that has a route configuration exposing an endpoint login which can be access
-using 'POST' method. Specifically:
+Create a server that has a route configuration exposing an endpoint login which can be accessed using a 'POST' method. Specifically:
 
 ```
 /login

@@ -1,18 +1,19 @@
 var Hapi = require('hapi');
-var path = require('path')
+var Path = require('path');
+var server = new Hapi.Server();
 
+server.connection({
+    host: 'localhost',
+    port: Number(process.argv[2] || 8080)
+});
 
-var options = {
-    views: {
-        path:  path.join(__dirname, 'templates'),
-        engines: {
-            html: require('handlebars')
-        },
-        helpersPath:  path.join(__dirname, 'helpers')
-    }
-};
-
-var server = Hapi.createServer('localhost', Number(process.argv[2] || 8080), options);
+server.views({
+    path: Path.join(__dirname, 'templates'),
+    engines: {
+        html: require('handlebars')
+    },
+    helpersPath:  Path.join(__dirname, 'helpers')
+});
 
 server.route({
     method: 'GET',
