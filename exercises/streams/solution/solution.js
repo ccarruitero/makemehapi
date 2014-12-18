@@ -1,7 +1,9 @@
 var Fs = require('fs');
-var Path = require('path');
 var Hapi = require('hapi');
-var rot13 = require('rot13-transform');
+var Path = require('path');
+var Rot13 = require('rot13-transform');
+
+
 var server = new Hapi.Server();
 
 server.connection({
@@ -15,7 +17,7 @@ server.route({
     config: {
         handler: function (request, reply) {
             var thisfile = Fs.createReadStream(Path.join(__dirname, '/input.txt'));
-            reply(thisfile.pipe(rot13()));
+            reply(thisfile.pipe(Rot13()));
         }
     }
 });

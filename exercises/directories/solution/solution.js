@@ -1,5 +1,7 @@
 var Hapi = require('hapi');
-var path = require('path');
+var Path = require('path');
+
+
 var server = new Hapi.Server();
 
 server.connection({
@@ -12,7 +14,7 @@ server.route({
     path: '/foo/bar/baz/{filename}',
     handler: {
         directory: {
-            path: path.join(__dirname, '/public')
+            path: Path.join(__dirname, '/public')
         }
     }
 });
