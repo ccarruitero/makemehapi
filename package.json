@@ -13,7 +13,7 @@
   ],
   "bin": "./makemehapi.js",
   "engines": {
-    "node": ">0.10.x"
+    "node": ">=0.10.32"
   },
   "description": "Self guided workshops to teach you about hapi.",
   "scripts": {
