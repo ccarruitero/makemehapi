@@ -17,20 +17,19 @@ Create a server that has a route configuration exposing an endpoint ``set-cookie
  -----------------------------------------------------------------
  ##HINTS
 
-createServer takes an options object as a third parameter. Using this options object, we can configure the server to handle cookies in various way,
+In your server.route() function, you can add the following option:
 
 ```js
 
-var options = {
+config: {
   state: {
-    cookies: {
-      parse: true ,
-      failAction: 'log'
-    }
+    parse: true,
+    failAction: 'log'
   }
-};
+}
 
 ```
+By using this option, we can configure the server to handle cookies in various ways.
 
 ```Hapi``` provided way to manage cookies for specific url path.
  
@@ -57,5 +56,5 @@ Cookies value are stored in server state. And we can access using following code
   var session = request.state.session;
   
 ```
-More information about handling of Cookies in ``hapi`` can be found in the Hapi directory in `node_modules` under Reference.md.
+More information about handling of Cookies in ``hapi`` can be found in the Hapi directory in `node_modules` under Api.md.
  
