@@ -28,7 +28,7 @@ server.route(
     },
     config: {
       state: {
-        parse: true ,
+        parse: true,
         failAction: 'log'
       }
     }
