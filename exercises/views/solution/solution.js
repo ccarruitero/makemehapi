@@ -20,7 +20,7 @@ server.route({
     method: 'GET',
     path: '/',
     handler: {
-        view: 'template.html'
+        view: 'index.html'
     }
 });
 
