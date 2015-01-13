@@ -44,6 +44,8 @@ npm install handlebars
 
 With Handlebars templates, you can render a variable directly in HTML by
 surrounding the variable with curly braces, e.g. `{{foo}}`.
+For example, in the query string /?foo=value, `foo` is the key/paramName and the value
+that would be rendered by {{foo}} would be `value`.
 
 The template receives some information from the request. For example, the query
 parameters that were passed in via the URL are available in the `query` object.
