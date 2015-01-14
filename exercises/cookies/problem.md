@@ -1,4 +1,4 @@
-Create a server that has a route configuration exposing an endpoint ``set-cookie`` and ``check-cookie`` which can be access using 'GET' request. Specifically:
+Create a server that has a route configuration exposing an endpoint ``set-cookie`` and ``check-cookie`` which can be access using `'GET'` request. Specifically:
  
 ```
 /set-cookie
