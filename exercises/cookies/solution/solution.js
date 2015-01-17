@@ -9,7 +9,6 @@ server.connection({
 });
 
 server.state('session', {
-  path: '/{path*}',
   encoding: 'base64json',
   ttl: 10,
   domain: 'localhost'
@@ -50,6 +49,12 @@ server.route(
         result = new Hapi.error.unauthorized('Missing authentication');
       }
       reply(result);
+    },
+    config: {
+      state: {
+        parse: true,
+        failAction: 'log'
+      }
     }
   }
 );
