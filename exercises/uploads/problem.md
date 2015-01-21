@@ -20,11 +20,11 @@ A form with description (string) and file (file) can be submitted to the upload 
 -----------------------------------------------------------------
 ##HINTS
 
-We can get the file as a readable stream by adding following config object in the server route:
+We can get the file as a readable stream by adding following object in the server route config:
 
 ```js
 
-config: {
+payload: {
     output : 'stream',
     parse : true
 }
