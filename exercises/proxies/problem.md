@@ -1,4 +1,4 @@
-A proxy lets you relay requests from one one server/service to another.
+A proxy lets you relay requests from one server/service to another.
 
 Create a server which listens on the port given by the
 second command-line argument, takes any requests to
