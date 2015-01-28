@@ -1,10 +1,9 @@
 {yellow}{bold}makemehapi is brought to you by the following persons:{/bold}{/yellow}
-
-{bold}Name                GitHub Username{/bold}
+{bold}Name GitHub Username{/bold}
 -----------------------------------
-Ben Acker                 @nvcexploder
-Lloyd Benson              @lloydbenson
-Lin Clark                 @linclark
-Chetan Dhembre            @chetandhembre
-Van Nguyen                @thegoleffect
-Wyatt Lyon Preul          @geek
+Ben Acker @nvcexploder
+Lloyd Benson @lloydbenson
+Lin Clark @linclark
+Chetan Dhembre @chetandhembre
+Van Nguyen @thegoleffect
+Wyatt Lyon Preul @geek
