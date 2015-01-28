@@ -1,10 +1,10 @@
-Create a server that has a route configuration exposing a upload endpoint which can be access using 'POST' method. Specifically:
+Create a server that with an upload endpoint accessible by using a 'POST' method with the path:
 
 ```
 /upload
 ```
 
-form with description (string) and file (file) can be submitted to upload endpoint, upload endpoint only accept ```multipart/form-data``` content-type request. On form submit request to upload endpoint following response is expected
+A form with the description (string) and a file (file) can be submitted to the upload endpoint, which only accepts ```multipart/form-data``` content-type requests. The following JSON should be returned: 
 
 ```json
 {
@@ -20,7 +20,7 @@ form with description (string) and file (file) can be submitted to upload endpoi
 -----------------------------------------------------------------
 ##HINTS
 
-We can get file as readable stream by adding following config in route   
+We can get a file as readable stream by adding the following in the route configuration:
 
 ```js
 
