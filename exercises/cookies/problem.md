@@ -4,7 +4,7 @@ Create a server that has a route configuration exposing an endpoint ``set-cookie
 /set-cookie
 ```
  
-The `set-cookie` endpoint will set a cookie with the key 'session' and the value `{key : 'makemehapi'}`. The cookie  should be `base64json` encoded, should expire in `10 ms`, and have a domain scope of `localhost`.  The response is unimportant for this exercise, and may be anything you like.
+The `set-cookie` endpoint will set a cookie with the key 'session' and the value `{key : 'makemehapi'}`. The cookie should be `base64json` encoded, should expire in `10 ms`, and have a domain scope of `localhost`.  The response is unimportant for this exercise, and may be anything you like.
  
 ```
 /check-cookie
