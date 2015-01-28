@@ -19,7 +19,7 @@ server.route({
         validate: {
             payload: Joi.object({
                 isGuest: Joi.boolean().required(),
-                username: Joi.when('isGuest', { is: false, then: Joi.required() }),
+                username: Joi.string().when('isGuest', { is: false, then: Joi.required() }),
                 password: Joi.string().alphanum(),
                 accessToken: Joi.string().alphanum()
             }).options({ allowUnknown: true }).without('password', 'accessToken')
