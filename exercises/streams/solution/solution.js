@@ -12,8 +12,8 @@ server.connection({
 });
 
 server.route({
-    method: "GET",
-    path: "/",
+    method: 'GET',
+    path: '/',
     config: {
         handler: function (request, reply) {
             var thisfile = Fs.createReadStream(Path.join(__dirname, '/input.txt'));
