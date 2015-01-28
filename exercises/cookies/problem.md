@@ -4,19 +4,19 @@ Create a server that has a route configuration exposing an endpoint ``set-cookie
 /set-cookie
 ```
  
-`set-cookie` endpoint will set cookie with key 'session' and value as `{key : 'makemehapi'}`. Cookie  should be `base64json` encoded, it should expire in `10 ms`. Set domain scope of cookies as `localhost`.  You can return any value in response. 
+The `set-cookie` endpoint will set a cookie with the key 'session' and the value `{key : 'makemehapi'}`. The cookie  should be `base64json` encoded, should expire in `10 ms`, and have a domain scope of `localhost`.  The response is unimportant for this exercise, and may be anything you like.
  
 ```
 /check-cookie
 ```
  
-`check-cookie` endpoint will have cookies received from `/set-cookie` endpoint. If `session` key is present in cookies then simply return `{user : 'hapi'}`. otherwise return `unauthorized` access error
+The `check-cookie` endpoint will have cookies received from the `/set-cookie` endpoint. If the `session` key is present in cookies then simply return `{user : 'hapi'}`, otherwise return an `unauthorized` access error.
  
 --------------------
  
 ##HINTS
 
-In your `server.route()` function, you can add the following option:
+In your `server.route()` function, you may add the following option:
 
 ```js
 config: {
@@ -29,7 +29,7 @@ config: {
 
 By using this option, we can configure the server to handle cookies in various ways.
 
-`Hapi` provided way to manage cookies for specific url path.
+`Hapi` provides a way to manage cookies for specific url path.
  
 ```js
 server.state('session', {
@@ -37,17 +37,17 @@ server.state('session', {
 });
 ```
 
-We can set cookies while replying to request as follow,
+We can set cookies while replying to request as follows:
  
 ```js
 reply('success').state('session', 'session')
 ```
 
-Cookies value are stored in server state. And we can access using following code,
+Cookie values are stored in server state, accessible using following code:
  
 ```js
 var session = request.state.session;
 ```
 
-More information about handling of Cookies in `hapi` can be found in the Hapi directory in `node_modules` under [API.md](https://github.com/hapijs/hapi/blob/master/API.md).
+More information about handling of cookies in `hapi` can be found in the Hapi directory in `node_modules` here [API](http://hapijs.com/api).
  
