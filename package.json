@@ -38,5 +38,6 @@
   "keywords": [
     "hapijs",
     "hapi"
-  ]
+  ],
+  "preferGlobal": true
 }
