@@ -1,10 +1,11 @@
-Create a server that with an upload endpoint accessible by using a 'POST' method with the path:
+Create a server with an endpoint that accepts an uploaded file to the following path:
 
 ```
 /upload
 ```
 
-A form with the description (string) and a file (file) can be submitted to the upload endpoint, which only accepts ```multipart/form-data``` content-type requests. The following JSON should be returned: 
+The endpoint should accept the following keys: description and file. ```Description``` should be a string describing whatever you want, and ```file``` should be an uploaded file. The endpoint should return a JSON object that follows the following pattern: 
+
 
 ```json
 {
@@ -20,6 +21,8 @@ A form with the description (string) and a file (file) can be submitted to the u
 -----------------------------------------------------------------
 ##HINTS
 
+To accept a file as input, your request should use the ```multipart/form-data``` header. 
+
 We can get a file as readable stream by adding the following in the route configuration:
 
 ```js
@@ -28,10 +31,9 @@ config: {
     output : 'stream',
     parse : true
 }
-
 ```
 
-If file uploaded with parameter ```file``` then we can read it in handler function from route using following code
+If file uploaded with parameter ```file``` then we can read it in the handler function this way:
    
 ```js
 handler: function (request, reply) {
@@ -39,14 +41,14 @@ handler: function (request, reply) {
     request.payload.file.on('data', function (data){
       
       body += data
-    })
+    });
+
     request.payload.file.on('end', function (){
 
-      console.log(body) 
-    })
+      console.log(body);
+    });
 }
-
 ```
 
-More information about handling file upload can be found in the Hapi directory in `node_modules` under Reference.md.
+More information about file uploading can be found in the reply interface of the hapi [API docs](http://hapijs.com/api#reply-interface).
 
