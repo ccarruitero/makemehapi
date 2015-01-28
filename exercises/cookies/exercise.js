@@ -1,12 +1,12 @@
 var through2 = require('through2');
 var hyperquest = require('hyperquest');
 var bl = require('bl');
-var formData = require('form-data');
-var fs = require('fs')
+var workshopper = require('workshopper');
 var exercise = require('workshopper-exercise')();
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
 var comparestdout = require('workshopper-exercise/comparestdout');
+
 
 // the output will be long lines so make the comparison take that into account
 exercise.longCompareOutput = true;
@@ -42,65 +42,70 @@ exercise.addProcessor(function (mode, callback) {
 
   this.submissionStdout.pipe(process.stdout);
 
-  // replace stdout with our own streams
+    // replace stdout with our own streams
   this.submissionStdout = through2();
   if (mode == 'verify') {
     this.solutionStdout = through2();
   }
 
-  setTimeout(query.bind(this, mode), 500);
-
+  setTimeout(query.bind(this, mode), 2000);
   process.nextTick(function () {
-    callback(null, true);
+    callback(null, true)
   });
 });
 
 
-// compare stdout of solution and submission
+// compare stdout of solution and submissionexercise = comparestdout(exercise)
 exercise = comparestdout(exercise);
-
 
 // delayed for 500ms to wait for servers to start so we can start
 // playing with them
 function query (mode) {
-
-  var exercise = this;
-
+  var exercise = this
   function verify (port, stream) {
 
     function error (err) {
 
-      exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code);
+      exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code)
     }
 
-    var url = 'http://localhost:' + port + '/upload';
 
-    var form = new formData()
-    form.append('description', 'makemehapi')
-    form.append('file', fs.createReadStream(__dirname + '/solution/input.txt'))
+    var setCookiesUrl = 'http://localhost:' + port + '/set-cookie';
+    var checkCookiesUrl = 'http://localhost:' + port + '/check-cookie';
     
-    form.pipe(hyperquest(url, {
-      method: 'post',
-      headers: form.getHeaders()
-    }).on('error', error))
-      .pipe(bl(function (err, data) {
+    hyperquest.get(setCookiesUrl)
+      .on('error', error)
+      .on('response', function(res) {
 
-        if (err) {
-          return stream.emit('error', err);
+        if (res.statusCode != 200 && mode == 'verify') {
+          exercise.emit('fail', 'Status code ' + res.statusCode + ' returned from url ' + setCookiesUrl + ', expected 200.')
+          workshopper.prototype.exerciseFail(null, exercise)
+        } else {
+          stream.write(JSON.stringify(res.headers['set-cookie']) + '\n')
+          hyperquest.get(checkCookiesUrl, {
+            headers : {Cookie : res.headers['set-cookie']}
+          })
+          .pipe(bl(function (err, data) {
+
+            if (err) {
+              return stream.emit('error', err)
+            }
+
+            stream.write(data.toString());
+            stream.end();
+          }));
         }
-
-        stream.write(data.toString());
-        stream.end();
-      }));
-
+      }
+   )
   }
 
-  verify(this.submissionPort, this.submissionStdout);
+    verify(this.submissionPort, this.submissionStdout)
 
-  if (mode == 'verify') {
-    verify(this.solutionPort, this.solutionStdout);
-  }
+    if (mode == 'verify') {
+      verify(this.solutionPort, this.solutionStdout);
+    }
 }
 
 
 module.exports = exercise;
+

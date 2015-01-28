@@ -11,7 +11,12 @@ command line,  with the following code:
 
 ```js
 var Hapi = require('hapi');
-var server = Hapi.createServer('localhost', Number(process.argv[2] || 8080));
+var server = new Hapi.Server();
+
+server.connection({
+    host: 'localhost',
+    port: Number(process.argv[2] || 8080)
+});
 ```
 
 Routes are added via the `route` function:
@@ -20,7 +25,7 @@ Routes are added via the `route` function:
 server.route({path: '/', method:'GET', handler: anonOrYourFunction});
 ```
 
-Handlers can be anonymous functions or separately declared (just like in javascript :P), but all of them should have this signature: 
+Handlers can be anonymous functions or separately declared (just like in javascript :P), but all of them should have this signature:
 
 ```js
 function handler(request, reply) {

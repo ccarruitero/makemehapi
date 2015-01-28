@@ -1,7 +1,6 @@
 var through2 = require('through2');
 var hyperquest = require('hyperquest');
 var bl = require('bl');
-var workshopper = require('workshopper');
 var exercise = require('workshopper-exercise')();
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
@@ -20,6 +19,7 @@ function rndport() {
 
     return 1024 + Math.floor(Math.random() * 64511);
 }
+
 
 // set up the data file to be passed to the submission
 exercise.addSetup(function (mode, callback) {
@@ -46,12 +46,16 @@ exercise.addProcessor(function (mode, callback) {
         this.solutionStdout = through2();
     }
 
-    setTimeout(query.bind(this, mode), 2000);
+    setTimeout(query.bind(this, mode), 500);
 
     process.nextTick(function () {
         callback(null, true);
     });
 });
+
+
+// compare stdout of solution and submission
+exercise = comparestdout(exercise);
 
 
 // delayed for 500ms to wait for servers to start so we can start
@@ -62,28 +66,35 @@ function query (mode) {
 
     function verify (port, stream) {
 
-        var url = 'http://localhost:' + port + '/';
-
+        var input = through2();
+        
         function error (err) {
+
             exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code);
         }
 
-        hyperquest.get(url)
-            .on('error', error)
-            .on('response', function(res) {
-                if (res.statusCode == 404 && mode == 'verify') {
-                    exercise.emit('fail', 'Page not found at ' + url );
-                    workshopper.prototype.exerciseFail(null, exercise);
-                }
-            })
+        var url = 'http://localhost:' + port + '/login';
+
+        input.pipe(hyperquest.post(url)
+            .on('error', error))
             .pipe(bl(function (err, data) {
 
-                if (err)
+                if (err) {
                     return stream.emit('error', err);
+                }
 
                 stream.write(data.toString() + '\n');
                 stream.end();
             }));
+        
+        var message = {
+            isGuest: false,
+            username: 'hapi',
+            password: 'makemehapi'
+        };
+
+        input.write(JSON.stringify(message));
+        input.end();
     }
 
     verify(this.submissionPort, this.submissionStdout);
@@ -93,8 +104,5 @@ function query (mode) {
     }
 }
 
-
-// compare stdout of solution and submission
-exercise = comparestdout(exercise);
 
 module.exports = exercise;

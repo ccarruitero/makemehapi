@@ -19,12 +19,12 @@ The Hapi handler `reply` function can accept a stream as an argument.
 
 ### File
 
-The `fs` module has a `createReadStream(pathToFile)` function that would be useful. 
+The `fs` module has a `createReadStream(pathToFile)` function that would be useful.
 
 ### Simple ROT13
 
-In this exercise, we'll be using rot13-stream. To install rot13-stream:
+In this exercise, we'll be using rot13-transform. To install rot13-transform:
 
 ```sh
-npm install rot13-stream
+npm install rot13-transform
 ```
