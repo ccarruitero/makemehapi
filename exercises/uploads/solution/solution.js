@@ -1,22 +1,22 @@
-var Hapi = require("hapi");
+var Hapi = require('hapi');
 
 var server = new Hapi.Server();
 
 server.connection({
   port: Number(process.argv[2] || 8080),
-  host: "localhost"
+  host: 'localhost'
 });
 
 server.route({
-  method: "POST",
-  path: "/upload",
+  method: 'POST',
+  path: '/upload',
   config: {
     handler: function(request, reply) {
-      var body = "";
-      request.payload.file.on("data", function(data) {
+      var body = '';
+      request.payload.file.on('data', function(data) {
         body += data;
       });
-      request.payload.file.on("end", function() {
+      request.payload.file.on('end', function() {
         var result = {
           description: request.payload.description,
           file: {
@@ -29,9 +29,9 @@ server.route({
       });
     },
     payload: {
-      output: "stream",
+      output: 'stream',
       parse: true,
-      allow: "multipart/form-data"
+      allow: 'multipart/form-data'
     }
   }
 });
