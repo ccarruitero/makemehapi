@@ -4,7 +4,7 @@ Create a server with an endpoint that accepts an uploaded file to the following 
 /upload
 ```
 
-The endpoint should accept the following keys: description and file. ```Description``` should be a string describing whatever you want, and ```file``` should be an uploaded file. The endpoint should return a JSON object that follows the following pattern: 
+The endpoint should accept the following keys: description and file. The ```description``` field should be a string describing whatever you want, and ```file``` should be an uploaded file. The endpoint should return a JSON object that follows the following pattern: 
 
 
 ```json
