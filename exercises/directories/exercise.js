@@ -48,7 +48,7 @@ exercise.addProcessor(function (mode, callback) {
         this.solutionStdout = through2();
     }
 
-    setTimeout(query.bind(this, mode), 500);
+    setTimeout(query.bind(this, mode), 2000);
 
     process.nextTick(function () {
         callback(null, true)
@@ -60,7 +60,7 @@ exercise.addProcessor(function (mode, callback) {
 exercise = comparestdout(exercise)
 
 
-// delayed for 500ms to wait for servers to start so we can start
+// delayed for 2000ms to wait for servers to start so we can start
 // playing with them
 function query (mode) {
     var exercise = this
