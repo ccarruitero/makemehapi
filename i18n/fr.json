@@ -4,6 +4,13 @@
   "menu": {
     "credits": "CRÉDITS"
   },
+  "common": {
+    "exercise": {
+      "fail": {
+        "cannot_connect": "Connexion impossible à http://localhost:%d: %s"
+      }
+    }
+  },
   "exercise": {
     "HELLO_HAPI": "BONJOUR HAPI",
     "ROUTES": "ROUTES",
