@@ -1,0 +1,21 @@
+{
+  "title": "HAPI S’OCCUPE DU REST",
+  "subtitle" : "\u001b[23mSélectionnez un exercice et tapez \u001b[3mEnter\u001b[23m pour démarrer",
+  "menu": {
+    "credits": "CRÉDITS"
+  },
+  "exercise": {
+    "HELLO_HAPI": "BONJOUR HAPI",
+    "ROUTES": "ROUTES",
+    "HANDLING": "GESTION DE REQUÊTE",
+    "DIRECTORIES": "RÉPERTOIRES",
+    "VIEWS": "VUES",
+    "PROXIES": "PROXIES",
+    "HELPING": "AIDER",
+    "STREAMS": "FLUX",
+    "VALIDATION": "VALIDATION",
+    "VALIDATION USING JOI OBJECT": "VALIDATION AVEC UN OBJET JOI",
+    "UPLOADS": "TÉLÉVERSEMENTS",
+    "COOKIES": "COOKIES"
+  }
+}
