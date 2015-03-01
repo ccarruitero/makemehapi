@@ -43,8 +43,10 @@ var routeConfig = {
 }
 ```
 
-Route information can be found in the Hapi directory
-`node_modules/hapi/API.md#route-configuration`
+All route information can be found here:
 
-Joi information can be found in
-`node_modules/hapi/node_modules/joi/README.md`
+    {rootdir:/node_modules/hapi/API.md}
+
+Joi information can be found here:
+
+    {rootdir:/node_modules/joi/README.md}

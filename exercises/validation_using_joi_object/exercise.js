@@ -67,10 +67,10 @@ function query (mode) {
     function verify (port, stream) {
 
         var input = through2();
-        
-        function error (err) {
 
-            exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code);
+        function error (err) {
+            var msg = exercise.__('fail.cannot_connect', port, err.code);
+            exercise.emit('fail', msg);
         }
 
         var url = 'http://localhost:' + port + '/login';
@@ -86,7 +86,7 @@ function query (mode) {
                 stream.write(data.toString() + '\n');
                 stream.end();
             }));
-        
+
         var message = {
             isGuest: false,
             username: 'hapi',
