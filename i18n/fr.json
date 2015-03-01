@@ -24,5 +24,10 @@
     "VALIDATION USING JOI OBJECT": "VALIDATION AVEC UN OBJET JOI",
     "UPLOADS": "TÉLÉVERSEMENTS",
     "COOKIES": "COOKIES"
+  },
+  "exercises": {
+    "VIEWS": {
+      "name_param": "les vues"
+    }
   }
 }

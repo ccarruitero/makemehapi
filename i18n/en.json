@@ -10,5 +10,10 @@
         "cannot_connect": "Error connecting to http://localhost:%d: %s"
       }
     }
+  },
+  "exercises": {
+    "VIEWS": {
+      "name_param": "the handling"
+    }
   }
 }
