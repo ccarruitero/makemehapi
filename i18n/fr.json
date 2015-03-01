@@ -28,6 +28,9 @@
   "exercises": {
     "VIEWS": {
       "name_param": "les vues"
+    },
+    "PROXIES": {
+      "greeting": "Bonjour les proxies"
     }
   }
 }
