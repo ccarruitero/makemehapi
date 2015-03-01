@@ -17,6 +17,9 @@
     },
     "PROXIES": {
       "greeting": "Hello Proxies"
+    },
+    "HELPING": {
+      "name_param": "Helping Hands"
     }
   }
 }

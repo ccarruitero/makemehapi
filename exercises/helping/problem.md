@@ -1,41 +1,46 @@
-Create a server which responds to requests to `/?name=Helping&suffix=!` using
-the template from the VIEWS exercise.
+Créez un serveur qui répond aux requêtes sur `/?name=assistant&suffix=!` en
+utilisant le template de l’exercice VUES.
 
-Instead of placing the query parameter directly in the template, create a helper
-at `helpers/helper.js` and use this helper in the template to output the `name`
-query parameter.
+Au lieu de placer le paramètre de la *query string* directement dans le template,
+créez un helper dans `helpers/helper.js` et utilisez-le dans le template pour
+afficher le paramètre de *query string* `name`.
 
 ```html
 <html>
-    <head><title>Hello Helping!</title></head>
+    <head><title>Bonjour assistant!</title></head>
     <body>
-        Hello Helping!
+        Bonjour assistant!
     </body>
 </html>
 ```
 
-The helper should concatenate the `name` and `suffix` query parameters.
+Le helper doit concaténer les paramètres de *query string* `name` et `suffix`.
 
 -----------------------------------------------------------------
-##HINTS
 
-Helpers are functions used within templates to perform transformations and other
-data manipulations using the template context or other inputs.
+## Conseils
 
-You can define a helpers path in the server options. All `.js` files in this
-directory will be loaded and the file name will be used as the helper name.
+Les helpers sont des fonctions utilisées à l’intérieur des templates pour
+effectuer des transformations et des manipulations de données en utilisant le
+contexte du template et d’autres sources.
+
+Vous pouvez définir un chemin de helpers dans les options du serveur.  Tous les
+fichiers `.js` de ce répertoire seront chargés et le nom de chaque fichier sera
+utilisé comme nom du helper fourni.
 
 ```js
 var options = {
     views: {
-        ...
+        …
         helpersPath: 'helpers'
     }
 };
 ```
 
-Each file must export a single method with the signature `function(context)` and
-return a string.
+Chaque fichier doit exporter une unique fonction avec comme signature
+`function(context)`, qui renverra une `String`.  La requête que vous
+manipuleriez d’habitude dans un gestionnaire de requête est accessible
+via `context.data.root`.
 
 ```
 module.exports = function(context) {
@@ -43,7 +48,7 @@ module.exports = function(context) {
 }
 ```
 
-The helper function can then be used in the template.
+Votre fonction helper peut alors être utilisée dans le template :
 
 ```html
 <div>{{helper}}</div>
