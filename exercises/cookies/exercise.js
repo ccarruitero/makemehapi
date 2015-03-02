@@ -65,21 +65,21 @@ function query (mode) {
   function verify (port, stream) {
 
     function error (err) {
-
-      exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code)
+      var msg = exercise.__('fail.cannot_connect', port, err.code);
+      exercise.emit('fail', msg);
     }
 
 
     var setCookiesUrl = 'http://localhost:' + port + '/set-cookie';
     var checkCookiesUrl = 'http://localhost:' + port + '/check-cookie';
-    
+
     hyperquest.get(setCookiesUrl)
       .on('error', error)
       .on('response', function(res) {
 
         if (res.statusCode != 200 && mode == 'verify') {
           exercise.emit('fail', 'Status code ' + res.statusCode + ' returned from url ' + setCookiesUrl + ', expected 200.')
-          workshopper.prototype.exerciseFail(null, exercise)
+          exercise.workshopper.exerciseFail(null, exercise)
         } else {
           stream.write(JSON.stringify(res.headers['set-cookie']) + '\n')
           hyperquest.get(checkCookiesUrl, {
