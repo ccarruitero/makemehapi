@@ -29,11 +29,6 @@ associé à la route n’a pas besoin de correspondre à un quelconque répertoi
 présent sur le disque.  De même, le nom du paramètre à la fin du chemin n’a pas
 d’importance particulière.
 
-Les routes utilisant un gestionnaire de type répertoire doivent inclure
-un paramètre `path` à la fin de leur chemin de route.  Le chemin préfixe
-de la route n’a pas besoin de correspondre au répertoire associé sur le
-disque, et le nom du paramètre de chemin est sans importance.
-
 ```js
 path: "/chemin/vers/quelquepart/{param}"
 ```
