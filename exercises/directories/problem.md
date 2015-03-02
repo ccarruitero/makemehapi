@@ -30,6 +30,6 @@ path: "/path/to/somewhere/{param}"
 ```
 
 Be careful: in practice, you’ll need to provide an absolute path to an
-`public` file in your program’s directory.  To achieve this, you’ll
+`public` directory in your program’s directory.  To achieve this, you’ll
 probably need the `path` core module, its `join()` function, and the
 `__dirname` global variable.

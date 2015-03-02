@@ -5,7 +5,7 @@ statique nommé `index.html` qui contiendra le code suivant :
 <html>
     <head><title>Coucou du gestionnaire</title></head>
     <body>
-        Salut, je suis le gestionnaire
+        Salut, je suis servi grâce au gestionnaire
     </body>
 </html>
 ```

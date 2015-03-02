@@ -1,5 +1,6 @@
 Créez un serveur qui répond aux requêtes sur `/?name=Vues` à l’aide d’un
-template stocké dans `templates/index.html`, qui produira le HTML suivant :
+gabarit (*template*) stocké dans `templates/index.html`, qui produira le HTML
+suivant :
 
 ```html
 <html>

@@ -29,7 +29,7 @@ Pour accepter un fichier en entrée, votre requête doit utiliser le type de
 contenu `multipart/form-data`, et votre gestionnaire doit décoder le contenu
 en fonction.
 
-On peut consulter ce fichier en tant que un flux en lecture en ajoutant les
+On peut consulter ce fichier sous la forme d’un flux en lecture en ajoutant les
 réglages suivants à la configuration de notre route :
 
 ```js

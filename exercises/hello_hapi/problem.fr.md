@@ -2,15 +2,15 @@ Créez un serveur hapi qui écoute sur le numéro de port passé dans
 la ligne de commande, et répond par « Bonjour Hapi » aux requêtes
 HTTP GET envoyées sur `/`.
 
-L’atelier enverra des requêtes à votre serveur et vérifiera leur réponse.
+L’exercice enverra des requêtes à votre serveur et vérifiera leurs réponses.
 
 -----------------------------------------------------------------
 
 ## Conseils
 
 Créez pour commencer un serveur qui écoute par défaut sur le port 8080,
-à moins qu’on lui en passe un sur la ligne de commande, à l’aide du code
-suivant :
+sauf si on lui passe un numéro de port explicite via la ligne de commande,
+à l’aide du code suivant :
 
 ```js
 var Hapi = require('hapi');
@@ -22,7 +22,8 @@ server.connection({
 });
 ```
 
-On ajoute les routes à l’aide de la fonction `route()` :
+On ajoute les routes (les chemins des points d’accès) à l’aide de la
+fonction `route()` :
 
 ```js
 server.route({ path: '/', method: 'GET', handler: anonOrYourFunction });

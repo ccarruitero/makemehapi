@@ -26,7 +26,7 @@ Le code suivant illustre à quoi peut ressembler une telle configuration :
 
 ```js
 var routeConfig = {
-    path: '/a/path/{with}/{parameters}',
+    path: '/un/chemin/{avec}/{des}/{parametres}',
     method: 'GET',
     handler: myHandler,
     config: {

@@ -15,13 +15,19 @@ exemple `public/file.html`.  Ce fichier contiendrait :
 
 ## Conseils
 
-Les gestionnaires peuvent être un objet avec un chemin de répertoire :
+Les gestionnaires peuvent être un objet avec un chemin vers un répertoire :
 
 ```js
 handler: {
     directory: { path: './public' }
 }
 ```
+
+Les routes reposant sur un gestionnaire de type `directory` doivent inclure un
+paramètre à la fin de la définition de leur chemin d’accès.  Ce chemin d’accès
+associé à la route n’a pas besoin de correspondre à un quelconque répertoire
+présent sur le disque.  De même, le nom du paramètre à la fin du chemin n’a pas
+d’importance particulière.
 
 Les routes utilisant un gestionnaire de type répertoire doivent inclure
 un paramètre `path` à la fin de leur chemin de route.  Le chemin préfixe
@@ -33,6 +39,6 @@ path: "/chemin/vers/quelquepart/{param}"
 ```
 
 Attention, dans la pratique, vous devrez fournir un chemin absolu pointant
-vers un fichier `public` situé dans le répertoire courant.  Vous aurez
+vers un répertoire `public` situé dans le répertoire courant.  Vous aurez
 sans doute besoin du module noyau `path`, de sa fonction `join()`, et de
 la variable globale `__dirname` pour y arriver.

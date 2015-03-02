@@ -9,15 +9,17 @@ ci-après.
 Le point d’accès `set-cookie` définit un cookie avec une clé `'session'` et une
 valeur `{ key: 'makemehapi' }`.  Le cookie doit être encodé au format
 `base64json`, expirer au bout de 10ms et être associé au domaine `localhost`.
-La réponse est sans importance pour cette exercice : mettez ce que vous voulez.
+La réponse à la requête est sans importance pour cette exercice : mettez ce
+que vous voulez.
 
 ```
 /check-cookie
 ```
 
-Le point d’accès `check-cookie` doit pouvoir recevoir ceux définis par
+Le point d’accès `check-cookie` doit pouvoir recevoir les cookies définis par
 `/set-cookie`.  Si la clé `'session'` est présente, renvoyez simplement comme
-réponse `{ user: 'hapi' }`, sinon renvoyez une erreur d’accès `unauthorized`.
+réponse `{ user: 'hapi' }`, sinon renvoyez une erreur d’accès HTTP
+`unauthorized`.
 
 --------------------
 
@@ -60,7 +62,7 @@ var session = request.state.session;
 ```
 
 Vous trouverez davantage d’informations sur la gestion des cookies dans la
-documentation API de Hapi, soit en local :
+documentation de l’API de Hapi, soit en local :
 
   {rootdir:/node_modules/hapi/API.md}
 

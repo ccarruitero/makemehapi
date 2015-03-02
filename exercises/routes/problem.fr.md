@@ -21,8 +21,8 @@ Et quand vous serez prêt-e à valider votre exercice, faites :
 ## Conseils
 
 Créez pour commencer un serveur qui écoute par défaut sur le port 8080,
-à moins qu’on lui en passe un sur la ligne de commande, à l’aide du code
-suivant :
+sauf si on lui passe un numéro de port explicite via la ligne de commande,
+à l’aide du code suivant :
 
 ```js
 var Hapi = require('hapi');

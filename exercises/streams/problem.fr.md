@@ -1,5 +1,6 @@
-Créez un serveur Hapi qui répond aux requêtes GET sur `/` en streamant la
-version ROT13-ée d’un fichier qui contient :
+Créez un serveur Hapi qui répond aux requêtes GET sur `/`.  La réponse doit être
+un flux issu d’un fichier auquel vous aurez appliqué une transformation ROT13.
+Le fichier d’origine contient le texte suivant :
 
 ```
 The Pursuit of Hapi-ness
