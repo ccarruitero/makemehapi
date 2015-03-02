@@ -94,7 +94,8 @@ function query (mode) {
             .on('error', error)
             .on('response', function(res) {
                 if (res.statusCode != 200 && mode == 'verify') {
-                    exercise.emit('fail', 'Status code ' + res.statusCode + ' returned from url ' + url + ', expected 200.')
+                    var msg = exercise.__('fail.wrong_status_code', res.statusCode, url, 200);
+                    exercise.emit('fail', msg)
                     exercise.workshopper.exerciseFail(null, exercise)
                 }
             })

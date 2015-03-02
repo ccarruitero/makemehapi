@@ -78,7 +78,8 @@ function query (mode) {
       .on('response', function(res) {
 
         if (res.statusCode != 200 && mode == 'verify') {
-          exercise.emit('fail', 'Status code ' + res.statusCode + ' returned from url ' + setCookiesUrl + ', expected 200.')
+          var msg = exercise.__('fail.wrong_status_code', res.statusCode, setCookiesUrl, 200);
+          exercise.emit('fail', msg)
           exercise.workshopper.exerciseFail(null, exercise)
         } else {
           stream.write(JSON.stringify(res.headers['set-cookie']) + '\n')

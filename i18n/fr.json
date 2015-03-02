@@ -7,7 +7,9 @@
   "common": {
     "exercise": {
       "fail": {
-        "cannot_connect": "Connexion impossible à http://localhost:%d: %s"
+        "cannot_connect": "Connexion impossible à http://localhost:%d: %s",
+        "page_not_found": "Page introuvable à l’adresse %s",
+        "wrong_status_code": "Code d’état %d renvoyé par l’URL %s, on attendait %d."
       }
     }
   },
