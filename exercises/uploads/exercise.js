@@ -69,8 +69,8 @@ function query (mode) {
   function verify (port, stream) {
 
     function error (err) {
-
-      exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code);
+      var msg = exercise.__('fail.cannot_connect', port, err.code);
+      exercise.emit('fail', msg);
     }
 
     var url = 'http://localhost:' + port + '/upload';
@@ -78,7 +78,7 @@ function query (mode) {
     var form = new formData()
     form.append('description', 'makemehapi')
     form.append('file', fs.createReadStream(__dirname + '/solution/input.txt'))
-    
+
     form.pipe(hyperquest(url, {
       method: 'post',
       headers: form.getHeaders()

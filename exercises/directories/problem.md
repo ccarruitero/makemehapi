@@ -28,3 +28,8 @@ the file system directory structure, and the parameter name does not matter.
 ```js
 path: "/path/to/somewhere/{param}"
 ```
+
+Be careful: in practice, you’ll need to provide an absolute path to an
+`public` directory in your program’s directory.  To achieve this, you’ll
+probably need the `path` core module, its `join()` function, and the
+`__dirname` global variable.

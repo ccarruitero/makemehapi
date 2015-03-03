@@ -1,0 +1,41 @@
+{
+  "title": "HAPI S’OCCUPE DU REST",
+  "subtitle" : "\u001b[23mSélectionnez un exercice et tapez \u001b[3mEnter\u001b[23m pour démarrer",
+  "menu": {
+    "credits": "CRÉDITS"
+  },
+  "common": {
+    "exercise": {
+      "fail": {
+        "cannot_connect": "Connexion impossible à http://localhost:%d: %s",
+        "page_not_found": "Page introuvable à l’adresse %s",
+        "wrong_status_code": "Code d’état %d renvoyé par l’URL %s, on attendait %d."
+      }
+    }
+  },
+  "exercise": {
+    "HELLO_HAPI": "BONJOUR HAPI",
+    "ROUTES": "ROUTES",
+    "HANDLING": "GESTION DE REQUÊTE",
+    "DIRECTORIES": "RÉPERTOIRES",
+    "VIEWS": "VUES",
+    "PROXIES": "PROXIES",
+    "HELPING": "ASSISTANTS",
+    "STREAMS": "FLUX",
+    "VALIDATION": "VALIDATION",
+    "VALIDATION USING JOI OBJECT": "VALIDATION AVEC UN OBJET JOI",
+    "UPLOADS": "TÉLÉVERSEMENTS",
+    "COOKIES": "COOKIES"
+  },
+  "exercises": {
+    "VIEWS": {
+      "name_param": "les vues"
+    },
+    "PROXIES": {
+      "greeting": "Bonjour les proxies"
+    },
+    "HELPING": {
+      "name_param": "les petites mains"
+    }
+  }
+}

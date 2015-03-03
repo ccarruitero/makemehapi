@@ -65,15 +65,17 @@ function query (mode) {
         var url = 'http://localhost:' + port + '/';
 
         function error (err) {
-            exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code);
+            var msg = exercise.__('fail.cannot_connect', port, err.code);
+            exercise.emit('fail', msg);
         }
 
         hyperquest.get(url)
             .on('error', error)
             .on('response', function(res) {
                 if (res.statusCode == 404 && mode == 'verify') {
-                    exercise.emit('fail', 'Page not found at ' + url );
-                    workshopper.prototype.exerciseFail(null, exercise);
+                    var msg = exercise.__('fail.page_not_found', url);
+                    exercise.emit('fail', msg)
+                    exercise.workshopper.exerciseFail(null, exercise);
                 }
             })
             .pipe(bl(function (err, data) {

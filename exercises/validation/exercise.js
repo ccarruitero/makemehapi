@@ -65,12 +65,12 @@ function query (mode) {
     var exercise = this
 
     function verify (port, stream) {
-       
+
         var url = 'http://localhost:' + port + '/chickens';
 
         function error (err) {
-
-            exercise.emit('fail', 'Error connecting to ' + url + ': ' + err.code)
+            var msg = exercise.__('fail.cannot_connect', port, err.code);
+            exercise.emit('fail', msg);
         }
 
         hyperquest.get(url)

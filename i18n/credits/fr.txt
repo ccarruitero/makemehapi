@@ -1,0 +1,2 @@
+{yellow}{bold}makemehapi vous est proposé par les personnes suivantes :{/bold}{/yellow}
+{bold}Nom                   Compte GitHub{/bold}

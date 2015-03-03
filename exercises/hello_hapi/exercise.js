@@ -67,8 +67,8 @@ function query (mode) {
     function verify (port, stream) {
 
         function error (err) {
-
-            exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code)
+            var msg = exercise.__('fail.cannot_connect', port, err.code);
+            exercise.emit('fail', msg);
         }
 
         hyperquest.get('http://localhost:' + port + '/')
