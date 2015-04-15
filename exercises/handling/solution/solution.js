@@ -13,7 +13,7 @@ server.route({
     method: 'GET',
     path: '/',
     handler: {
-        file: Path.join(__dirname, '/index.html')
+        file: Path.join(__dirname, 'index.html')
     }
 });
 
