@@ -2,7 +2,7 @@
 
 [![NPM](https://nodei.co/npm/makemehapi.png?downloads=true&stars=true)](https://nodei.co/npm/makemehapi/)
 
-Lead Maintainer: [Ben Acker](https://github.com/nvcexploder)
+Lead Maintainer: [Eran Hammer](https://github.com/hueniverse)
 
 Learn all about [hapi](http://hapijs.com) through a series of challenges.
 
