@@ -9,7 +9,7 @@ server.connection({
 });
 
 server.state('session', {
-  path: '/{path*}',
+  path: '/',
   encoding: 'base64json',
   ttl: 10,
   domain: 'localhost'
