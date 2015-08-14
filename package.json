@@ -25,7 +25,7 @@
     "combined-stream": "^1.0.5",
     "form-data": "^0.2.0",
     "handlebars": "^3.0.0",
-    "hapi": "8.x.x",
+    "hapi": "9.x.x",
     "hyperquest": "^1.0.1",
     "joi": "6.x.x",
     "rot13-transform": "^0.0.1",
