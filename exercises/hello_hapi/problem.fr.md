@@ -47,8 +47,6 @@ Pour que le serveur commence à écouter sur le port défini au préalable,
 appelez la fonction `start()` :
 
 ```js
-server.start(function () {
-  console.log('Server running at:', server.info.uri);
-});
+server.start(function () {});
 ```
 -----------------------------------------------------------------
