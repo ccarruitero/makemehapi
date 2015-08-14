@@ -27,6 +27,7 @@
     "handlebars": "^3.0.0",
     "hapi": "9.x.x",
     "hyperquest": "^1.0.1",
+    "inert": "3.x.x",
     "joi": "6.x.x",
     "rot13-transform": "^0.0.1",
     "through2": "^2.0.0",
