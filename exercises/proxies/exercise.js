@@ -46,7 +46,7 @@ exercise.addSetup(function (mode, callback) {
             reply(exercise.__('greeting'));
         }
     });
-    server.start();
+    server.start(function () {});
 
     process.nextTick(callback);
 });
