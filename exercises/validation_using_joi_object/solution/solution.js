@@ -1,7 +1,6 @@
 var Hapi = require('hapi');
 var Joi = require('joi');
 
-
 var server = new Hapi.Server();
 
 server.connection({
@@ -27,4 +26,4 @@ server.route({
     }
 });
 
-server.start();
+server.start(function () {});
