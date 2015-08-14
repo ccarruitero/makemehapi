@@ -19,6 +19,8 @@ The helper should concatenate the `name` and `suffix` query parameters.
 -----------------------------------------------------------------
 ##HINTS
 
+Be sure to register the vision plugin when attempting to render the template.
+
 Helpers are functions used within templates to perform transformations and other
 data manipulations using the template context or other inputs.
 
