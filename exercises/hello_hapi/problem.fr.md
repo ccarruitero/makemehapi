@@ -36,10 +36,10 @@ doivent avoir la même signature :
 ```js
 function handler(request, reply) {
 
-	// `request` a toutes les informations
-	// `reply` gère la réponse au client
+    // `request` a toutes les informations
+    // `reply` gère la réponse au client
 
-	reply({ mustFlow: true });
+    reply({ mustFlow: true });
 }
 ```
 
@@ -47,6 +47,8 @@ Pour que le serveur commence à écouter sur le port défini au préalable,
 appelez la fonction `start()` :
 
 ```js
-server.start();
+server.start(function () {
+  console.log('Server running at:', server.info.uri);
+});
 ```
 -----------------------------------------------------------------

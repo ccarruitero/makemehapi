@@ -1,13 +1,13 @@
-Create a hapi server that listens on a port passed from the command line and replies with
-"Hello Hapi" when an HTTP GET request is sent to /.
+Create a hapi server that listens on a port passed from the command line and
+replies with "Hello Hapi" when an HTTP GET request is sent to /.
 
 The workshop will execute requests against the server and verify the output.
 
 -----------------------------------------------------------------
 ##HINTS
 
-Create a server that listens on port 8080, if none is passed from the
-command line,  with the following code:
+Create a server that listens on port 8080, if none is passed from the command
+line,  with the following code:
 
 ```js
 var Hapi = require('hapi');
@@ -30,16 +30,19 @@ Handlers can be anonymous functions or separately declared (just like in javascr
 ```js
 function handler(request, reply) {
 
-	//request has all information
-	//reply handles client response
+    //request has all information
+    //reply handles client response
 
-	reply({mustFlow:true});
+    reply({mustFlow:true});
 }
 ```
 
-Calling the `start` function gets a server listening on the assigned port:
+Calling the `start` function gets a server listening on the assigned port. Note
+that a callback is required when calling `start`:
 
 ```js
-server.start();
+server.start(function () {
+  console.log('Server running at:', server.info.uri);
+});
 ```
 -----------------------------------------------------------------
