@@ -40,4 +40,4 @@ function concatStream(src, cb) {
   src.on('error', function(err)  { cb(err); })
 }
 
-server.start();
+server.start(function () {});

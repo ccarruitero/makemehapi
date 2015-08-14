@@ -1,6 +1,5 @@
 var Hapi = require('hapi');
 
-
 var server = new Hapi.Server();
 
 server.connection({
@@ -9,49 +8,43 @@ server.connection({
 });
 
 server.state('session', {
-  path: '/',
-  encoding: 'base64json',
-  ttl: 10,
-  domain: 'localhost'
+    path: '/',
+    encoding: 'base64json',
+    ttl: 10,
+    domain: 'localhost'
 });
 
-server.route(
-  {
+server.route({
     method: 'GET',
     path: '/set-cookie',
     handler: function (request, reply) {
-      return reply({
-        message : 'success'
-      }).state('session', {
-        key : 'makemehapi'
-      });
+        return reply({
+            message : 'success'
+        }).state('session', { key : 'makemehapi' });
     },
     config: {
-      state: {
-        parse: true,
-        failAction: 'log'
-      }
+        state: {
+            parse: true,
+            failAction: 'log'
+        }
     }
-  }
-);
+});
 
-server.route(
-  {
+server.route({
     method: 'GET',
     path: '/check-cookie',
     handler: function (request, reply) {
-      var session = request.state.session;
-      var result;
-      if (session) {
-        result = {
-          user : 'hapi'
-        };
-      } else {
-        result = new Hapi.error.unauthorized('Missing authentication');
-      }
-      reply(result);
-    }
-  }
-);
+        var session = request.state.session;
+        var result;
 
-server.start();
+        if (session) {
+            result = { user : 'hapi' };
+        } else {
+            result = new Hapi.error.unauthorized('Missing authentication');
+        }
+
+        reply(result);
+    }
+});
+
+server.start(function () {});

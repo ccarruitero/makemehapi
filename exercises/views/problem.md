@@ -13,6 +13,18 @@ located at `templates/index.html` which outputs the following HTML:
 -----------------------------------------------------------------
 ##HINTS
 
+This exercise requires you to install the vision module, which is a Hapi plugin
+for rendering templates. You'll need to register the plugin in your code in
+order to render your templates:
+
+```js
+var Vision = require('vision');
+
+server.register(Vision, function (err) {
+    if (err) throw err;
+});
+```
+
 The `view` key can be used to define the template to be used to generate the
 response.
 

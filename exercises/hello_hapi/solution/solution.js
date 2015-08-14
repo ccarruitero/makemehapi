@@ -16,4 +16,4 @@ server.route({
     }
 });
 
-server.start();
+server.start(function () {});

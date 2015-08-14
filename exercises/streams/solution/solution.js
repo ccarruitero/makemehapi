@@ -3,7 +3,6 @@ var Hapi = require('hapi');
 var Path = require('path');
 var Rot13 = require('rot13-transform');
 
-
 var server = new Hapi.Server();
 
 server.connection({
@@ -22,4 +21,4 @@ server.route({
     }
 });
 
-server.start();
+server.start(function () {});
