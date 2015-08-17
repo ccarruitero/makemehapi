@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "bl": "^1.0.0",
+    "boom": "2.x.x",
     "colors-tmpl": "^1.0.0",
     "combined-stream": "^1.0.5",
     "form-data": "^0.2.0",

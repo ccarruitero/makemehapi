@@ -1,4 +1,5 @@
 var Hapi = require('hapi');
+var Boom = require('boom');
 
 var server = new Hapi.Server();
 
@@ -40,7 +41,7 @@ server.route({
         if (session) {
             result = { user : 'hapi' };
         } else {
-            result = new Hapi.error.unauthorized('Missing authentication');
+            result = Boom.unauthorized('Missing authentication');
         }
 
         reply(result);
