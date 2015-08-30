@@ -1,12 +1,13 @@
-Create a hapi server that listens on a port passed from the command line and
-replies with "Hello Hapi" when an HTTP GET request is sent to /.
+Create a Hapi server that listens on a port passed from the command line and
+replies with "Hello Hapi" when an HTTP GET request is sent to `/` .
+
 
 The workshop will execute requests against the server and verify the output.
 
 -----------------------------------------------------------------
 ##HINTS
 
-Create a server that listens on port 8080, if none is passed from the command
+Create a server that listens on port `8080` , if none is passed from the command
 line,  with the following code:
 
 ```js

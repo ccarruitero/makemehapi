@@ -1,4 +1,4 @@
-Create a Hapi server which responds to GET requests to `/` by streaming a ROT13'd version of a file that contains:
+Create a Hapi server which responds to `GET` requests to `/` by streaming a ROT13'd version of a file that contains:
 
 ```
 The Pursuit of Hapi-ness
@@ -23,7 +23,7 @@ The `fs` module has a `createReadStream(pathToFile)` function that would be usef
 
 ### Simple ROT13
 
-In this exercise, we'll be using rot13-transform. To install rot13-transform:
+In this exercise, we'll be using `rot13-transform`. To install rot13-transform:
 
 ```sh
 npm install rot13-transform

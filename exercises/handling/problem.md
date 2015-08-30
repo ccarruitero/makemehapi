@@ -13,7 +13,7 @@ Create a server which responds to requests to `/` with a static HTML file named
 -----------------------------------------------------------------
 ##HINTS
 
-This exercise requires you to install the inert module, which is a Hapi plugin
+This exercise requires you to install the `inert` module, which is a Hapi plugin
 for serving static files and directories. You'll need to register the plugin in
 your code in order to serve static files:
 
@@ -26,8 +26,8 @@ server.register(Inert, function (err) {
 ```
 
 You can declare handlers as objects instead of functions. The object must
-contain one of the following: `file` (requires inert plugin), `directory`
-(requires inert plugin), `proxy` (requires h2o2 plugin), or `view` (requires vision plugin).
+contain one of the following: `file` (requires `inert` plugin), `directory`
+(requires `inert` plugin), `proxy` (requires `h2o2` plugin), or `view` (requires `vision` plugin).
 
 For example, `handler` can be assigned an object with the `file` key:
 
