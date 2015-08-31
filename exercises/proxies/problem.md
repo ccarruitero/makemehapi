@@ -6,7 +6,7 @@ requests to the path `/proxy` and proxies them to `http://localhost:65535/proxy`
 -----------------------------------------------------------------
 ##HINTS
 
-This exercise requires you to install the h2o2 module, which is a Hapi plugin
+This exercise requires you to install the `h2o2` module, which is a hapi plugin
 for handling proxies. You'll need to register the plugin in your code in
 order to use the `proxy` configuration:
 

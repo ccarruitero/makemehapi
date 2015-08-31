@@ -13,7 +13,7 @@ file in a directory, e.g. `public/file.html`, which contains the following:
 -----------------------------------------------------------------
 ##HINTS
 
-You'll need to `require` and `register` the inert plugin in this exercise the
+You'll need to `require` and `register` the `inert` plugin in this exercise the
 same as in the previous exercise in order to serve the static directory's
 contents.
 

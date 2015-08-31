@@ -1,6 +1,6 @@
-By using a Joi object we can specify highly customizable validation rules in paths, request payloads, and responses.
+By using a `Joi` object we can specify highly customizable validation rules in paths, request payloads, and responses.
 
-Create a server exposing a login endpoint and reply with "login successful" when an HTTP POST request is sent to `/login`.
+Create a server exposing a login endpoint and reply with "login successful" when an HTTP `POST` request is sent to `/login`.
 
 The endpoint will accept following payload variables:
 
@@ -18,7 +18,7 @@ iii) if any other parameters than specified above are sent, they should pass the
 -----------------------------------------------------------------
 ##HINTS
 
-Create a server that listens on port 8080 with the following code:
+Create a server that listens on port `8080` with the following code:
 
 ```js
 

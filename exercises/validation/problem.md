@@ -3,7 +3,7 @@ One of those ways is through validation.
 
 Validation can happen in parameters in the path, in inbound payload validation, and outbound response.
 Objects for validation are defined
-in the Joi validation framework.
+in the `Joi` validation framework.
 
 Create a server that has a route configuration exposing an endpoint for
 chickens. Specifically:
@@ -18,7 +18,7 @@ The solution will just check that a Validation object exists within the configur
 -----------------------------------------------------------------
 ##HINTS
 
-Create a server that listens on port 8080 with the following code:
+Create a server that listens on port `8080` with the following code:
 
 ```js
 var routeConfig = {
