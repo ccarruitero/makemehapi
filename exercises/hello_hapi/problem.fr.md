@@ -1,5 +1,5 @@
 Créez un serveur hapi qui écoute sur le numéro de port passé dans
-la ligne de commande, et répond par « Bonjour Hapi » aux requêtes
+la ligne de commande, et répond par « Bonjour hapi » aux requêtes
 HTTP GET envoyées sur `/`.
 
 L’exercice enverra des requêtes à votre serveur et vérifiera leurs réponses.

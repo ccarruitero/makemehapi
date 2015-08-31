@@ -36,7 +36,7 @@ config: {
 
 By using this option, we can configure the server to handle cookies in various ways.
 
-`Hapi` provides a way to manage cookies for a specific url path.
+`hapi` provides a way to manage cookies for a specific url path.
 
 ```js
 server.state('session', {

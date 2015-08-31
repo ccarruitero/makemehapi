@@ -13,7 +13,7 @@ Create a server which responds to requests to `/` with a static HTML file named
 -----------------------------------------------------------------
 ##HINTS
 
-This exercise requires you to install the `inert` module, which is a Hapi plugin
+This exercise requires you to install the `inert` module, which is a hapi plugin
 for serving static files and directories. You'll need to register the plugin in
 your code in order to serve static files:
 

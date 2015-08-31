@@ -13,7 +13,7 @@ located at `templates/index.html` which outputs the following HTML:
 -----------------------------------------------------------------
 ##HINTS
 
-This exercise requires you to install the `vision` module, which is a Hapi plugin
+This exercise requires you to install the `vision` module, which is a hapi plugin
 for rendering templates. You'll need to register the plugin in your code in
 order to render your templates:
 

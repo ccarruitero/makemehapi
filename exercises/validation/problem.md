@@ -1,4 +1,4 @@
-Route configuration offers lots of ways to customize each endpoint offered by your Hapi application.
+Route configuration offers lots of ways to customize each endpoint offered by your hapi application.
 One of those ways is through validation.
 
 Validation can happen in parameters in the path, in inbound payload validation, and outbound response.
