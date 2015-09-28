@@ -46,6 +46,6 @@ Information can be found here:
 
     {rootdir:/node_modules/joi/README.md}
 
-In this exercise, we'll be using joi. To install joi:
+To install joi:
 
     {npm install joi}
