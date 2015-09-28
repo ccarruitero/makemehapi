@@ -40,6 +40,12 @@ All route information can be found here:
 
     {rootdir:/node_modules/hapi/API.md}
 
-Joi information can be found here:
+Joi 
+
+Information can be found here:
 
     {rootdir:/node_modules/joi/README.md}
+
+In this exercise, we'll be using joi. To install joi:
+
+    {npm install joi}
