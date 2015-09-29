@@ -48,4 +48,6 @@ Information can be found here:
 
 To install joi:
 
-    {npm install joi}
+```sh
+npm install joi
+```
