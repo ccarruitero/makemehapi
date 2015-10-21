@@ -27,7 +27,7 @@
     "form-data": "^0.2.0",
     "h2o2": "4.x.x",
     "handlebars": "^3.0.0",
-    "hapi": "10.x.x",
+    "hapi": "11.x.x",
     "hapi-auth-basic": "3.x.x",
     "hyperquest": "^1.0.1",
     "inert": "3.x.x",
