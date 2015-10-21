@@ -1,5 +1,6 @@
-Hapi's request lifecycle gives multiple places to add functions to modify an inbound request. Functions can be tied into
- the extension points by using the following syntax:
+Hapi's request lifecycle gives multiple places to add functions to modify an
+inbound request. Functions can be tied into the extension points by using the
+following syntax:
 
 ```javascript
     server.ext('onRequest', function (request, next) {
@@ -30,19 +31,22 @@ The extension points are listed below:
 * onPreResponse
     * Validates payload
 
-For this exercise, create a function that will be added to a server on the 'onRequest' extension point. Have the
-function log the requested URL path to the console.
+For this exercise, create a function that will be added to a server on the
+'onRequest' extension point. Have the function log the requested URL path to the
+console.
 
 The workshop will execute requests against the server and verify the output.
 
 -----------------------------------------------------------------
 ##HINTS
 
-After creating a server, add an extension point by calling the server's ```ext``` function.
+After creating a server, add an extension point by calling the server's
+```ext``` function.
 
 ```js
 server.ext(extensionPoint, function (request, next) { ...
 ```
 
-The path will be part of the inbound request. Ensure to call ```next();``` within the extension handler!
+The path will be part of the inbound request. Ensure to call ```next();```
+within the extension handler!
 -----------------------------------------------------------------

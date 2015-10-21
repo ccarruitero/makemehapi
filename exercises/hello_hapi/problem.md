@@ -26,7 +26,8 @@ Routes are added via the `route` function:
 server.route({path: '/', method:'GET', handler: anonOrYourFunction});
 ```
 
-Handlers can be anonymous functions or separately declared (just like in javascript :P), but all of them should have this signature:
+Handlers can be anonymous functions or separately declared (just like in
+javascript :P), but all of them should have this signature:
 
 ```js
 function handler(request, reply) {
