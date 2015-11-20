@@ -1,6 +1,8 @@
-By using a `Joi` object we can specify highly customizable validation rules in paths, request payloads, and responses.
+By using a `Joi` object we can specify highly customizable validation rules in
+paths, request payloads, and responses.
 
-Create a server exposing a login endpoint and reply with "login successful" when an HTTP `POST` request is sent to `/login`.
+Create a server exposing a login endpoint and reply with "login successful" when
+an HTTP `POST` request is sent to `/login`.
 
 The endpoint will accept following payload variables:
 

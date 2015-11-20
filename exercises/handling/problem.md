@@ -27,7 +27,8 @@ server.register(Inert, function (err) {
 
 You can declare handlers as objects instead of functions. The object must
 contain one of the following: `file` (requires `inert` plugin), `directory`
-(requires `inert` plugin), `proxy` (requires `h2o2` plugin), or `view` (requires `vision` plugin).
+(requires `inert` plugin), `proxy` (requires `h2o2` plugin), or `view` (requires
+`vision` plugin).
 
 For example, `handler` can be assigned an object with the `file` key:
 

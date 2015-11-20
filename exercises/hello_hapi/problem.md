@@ -26,15 +26,16 @@ Routes are added via the `route` function:
 server.route({path: '/', method:'GET', handler: anonOrYourFunction});
 ```
 
-Handlers can be anonymous functions or separately declared (just like in javascript :P), but all of them should have this signature:
+Handlers can be anonymous functions or separately declared (just like in
+javascript :P), but all of them should have this signature:
 
 ```js
 function handler(request, reply) {
 
-    //request has all information
-    //reply handles client response
+    // Request has all information
+    // Reply handles client response
 
-    reply({mustFlow:true});
+    reply();
 }
 ```
 
@@ -43,7 +44,7 @@ that a callback is required when calling `start`:
 
 ```js
 server.start(function () {
-  console.log('Server running at:', server.info.uri);
+    console.log('Server running at:', server.info.uri);
 });
 ```
 -----------------------------------------------------------------

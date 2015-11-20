@@ -59,7 +59,8 @@ surrounding the variable with curly braces, e.g. `{{foo}}`.
 
 The template receives some information from the request. For example, the query
 parameters that were passed in via the URL are available in the `query` object.
-These parameters can then be used in the template.  Query params get automatically parsed and aren't declared in the route `path`.
+These parameters can then be used in the template.  Query params get
+automatically parsed and aren't declared in the route `path`.
 
 ```html
 <div>{{query.paramName}}</div>
