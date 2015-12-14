@@ -1,0 +1,2 @@
+{yellow}{bold}makemehapi é trazido a você pelas seguintes pessoas:{/bold}{/yellow}
+{bold}Nome                  Usuário GitHub{/bold}
