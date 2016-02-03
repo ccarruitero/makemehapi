@@ -1,0 +1,27 @@
+{
+  "title": "REPOLSE BEM COM HAPI",
+  "subtitle": "\u001b[23mSelecione um exercício a aperte \u001b[3mEnter\u001b[23m para começar",
+  "menu": {
+    "credits": "CRÉDITOS"
+  },
+  "common": {
+    "exercise": {
+      "fail": {
+        "cannot_connect": "Erro ao conectar em http://localhost:%d: %s",
+        "page_not_found": "Página não encontrada em %s",
+        "wrong_status_code": "Código de status %d retornado da url %s, esperado %d."
+      }
+    }
+  },
+  "exercises": {
+    "VIEWS": {
+      "name_param": "o manuseamento"
+    },
+    "PROXIES": {
+      "greeting": "Olá Proxies"
+    },
+    "HELPING": {
+      "name_param": "Mãos que Ajudam"
+    }
+  }
+}
