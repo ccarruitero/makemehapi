@@ -88,7 +88,7 @@ function query (mode) {
                 if (err)
                     return stream.emit('error', err)
 
-                stream.write(data.toString() + '\n');
+                stream.write(data.toString().trim());
                 stream.end();
             }));
     }
