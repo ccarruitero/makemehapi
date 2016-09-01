@@ -12,7 +12,10 @@ server.state('session', {
     path: '/',
     encoding: 'base64json',
     ttl: 10,
-    domain: 'localhost'
+    domain: 'localhost',
+    isSameSite: false,
+    isSecure: false,
+    isHttpOnly: false
 });
 
 server.route({
