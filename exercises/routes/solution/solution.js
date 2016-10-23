@@ -11,7 +11,7 @@ server.connection({
 server.route({
     method: 'GET',
     path: '/{name}',
-    handler: function (request, reply) {
+    handler: (request, reply) => {
         reply('Hello ' + request.params.name);
         // a more secure alternative is this:
         //
@@ -22,4 +22,6 @@ server.route({
     }
 });
 
-server.start(function () {});
+server.start((err) => {
+    if (err) throw err;
+});

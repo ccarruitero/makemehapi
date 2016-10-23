@@ -10,9 +10,11 @@ server.connection({
 server.route({
     method: 'GET',
     path: '/',
-    handler: function (request, reply) {
+    handler: (request, reply) => {
         reply('Bonjour hapi');
     }
 });
 
-server.start(function () {});
+server.start((err) => {
+    if (err) throw err;
+});

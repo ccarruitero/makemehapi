@@ -9,24 +9,27 @@ server.connection({
     port: Number(process.argv[2] || 8080)
 });
 
-var validate = function (request, username, password, callback) {
+var validate = (request, username, password, callback) => {
     var isValid = username === user.name && password === user.password;
 
     return callback(null, isValid, { name: user.name });
 };
 
-server.register(Auth, function (err) {
+server.register(Auth, (err) => {
     server.auth.strategy('simple', 'basic', { validateFunc: validate });
     server.route({
         method: 'GET',
         path: '/',
         config: {
             auth: 'simple',
-            handler: function (request, reply) {
+            handler: (request, reply) => {
                 reply();
             }
         }
     });
 
-    server.start(function () {});
+    server.start((err) => {
+        if (err) throw err;
+    });
 });
+

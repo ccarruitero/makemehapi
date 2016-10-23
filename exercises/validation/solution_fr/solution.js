@@ -13,7 +13,7 @@ server.route({
     method: 'GET',
     path: '/chickens/{breed}',
     config: {
-        handler: function (request, reply) {
+        handler: (request, reply) => {
             reply('Vous avez demandé les poulets ' + request.params.breed);
         },
         validate: {
@@ -24,4 +24,6 @@ server.route({
     }
 });
 
-server.start(function () {});
+server.start((err) => {
+    if (err) throw err;
+});

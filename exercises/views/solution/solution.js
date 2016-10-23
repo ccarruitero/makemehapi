@@ -9,7 +9,9 @@ server.connection({
     port: Number(process.argv[2] || 8080)
 });
 
-server.register(Vision, function () {});
+server.register(Vision, (err) => {
+    if (err) throw err;
+});
 
 server.views({
     engines: {
@@ -26,4 +28,6 @@ server.route({
     }
 });
 
-server.start(function () {});
+server.start((err) => {
+    if (err) throw err;
+});

@@ -11,12 +11,14 @@ server.route({
   method: 'POST',
   path: '/upload',
   config: {
-    handler: function(request, reply) {
+    handler: (request, reply) => {
       var body = '';
-      request.payload.file.on('data', function(data) {
+
+      request.payload.file.on('data', (data) => {
         body += data;
       });
-      request.payload.file.on('end', function() {
+
+      request.payload.file.on('end', () => {
         var result = {
           description: request.payload.description,
           file: {
@@ -25,6 +27,7 @@ server.route({
             headers: request.payload.file.hapi.headers
           }
         };
+
         reply(JSON.stringify(result));
       });
     },
@@ -36,4 +39,6 @@ server.route({
   }
 });
 
-server.start(function () {});
+server.start((err) => {
+    if (err) throw err;
+});

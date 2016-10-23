@@ -12,7 +12,7 @@ server.route({
     method: 'POST',
     path: '/login',
     config: {
-        handler: function (request, reply) {
+        handler: (request, reply) => {
             reply('authentification réussie');
         },
         validate: {
@@ -26,4 +26,6 @@ server.route({
     }
 });
 
-server.start(function () {});
+server.start((err) => {
+    if (err) throw err;
+});
