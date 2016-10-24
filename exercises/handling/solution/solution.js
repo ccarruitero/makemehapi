@@ -9,7 +9,9 @@ server.connection({
     port: Number(process.argv[2] || 8080)
 });
 
-server.register(Inert, function () {});
+server.register(Inert, (err) => {
+    if (err) throw err;
+});
 
 server.route({
     method: 'GET',
@@ -19,4 +21,6 @@ server.route({
     }
 });
 
-server.start(function () {});
+server.start((err) => {
+    if (err) throw err;
+});

@@ -14,11 +14,13 @@ server.route({
     method: 'GET',
     path: '/',
     config: {
-        handler: function (request, reply) {
+        handler: (request, reply) => {
             var thisfile = Fs.createReadStream(Path.join(__dirname, 'input.txt'));
             reply(thisfile.pipe(Rot13()));
         }
     }
 });
 
-server.start(function () {});
+server.start((err) => {
+    if (err) throw err;
+});

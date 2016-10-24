@@ -8,7 +8,9 @@ server.connection({
     port: Number(process.argv[2] || 8080)
 });
 
-server.register(H2o2, function () {});
+server.register(H2o2, (err) => {
+    if (err) throw err;
+});
 
 server.route({
     method: 'GET',
@@ -21,4 +23,6 @@ server.route({
     }
 });
 
-server.start(function () {});
+server.start((err) => {
+    if (err) throw err;
+});

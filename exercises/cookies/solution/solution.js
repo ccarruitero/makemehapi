@@ -21,7 +21,7 @@ server.state('session', {
 server.route({
     method: 'GET',
     path: '/set-cookie',
-    handler: function (request, reply) {
+    handler: (request, reply) => {
         return reply({
             message : 'success'
         }).state('session', { key : 'makemehapi' });
@@ -37,7 +37,7 @@ server.route({
 server.route({
     method: 'GET',
     path: '/check-cookie',
-    handler: function (request, reply) {
+    handler: (request, reply) => {
         var session = request.state.session;
         var result;
 
@@ -51,4 +51,7 @@ server.route({
     }
 });
 
-server.start(function () {});
+server.start((err) => {
+    if (err) throw err;
+});
+
