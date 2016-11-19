@@ -1,0 +1,42 @@
+{
+  "title": "HAPIで楽をしよう",
+  "subtitle": "\u001b[23m課題を選択し、\u001b[3mEnter\u001b[23mで始めて下さい",
+  "menu": {
+    "credits": "CREDITS"
+  },
+  "common": {
+    "exercise": {
+      "fail": {
+        "cannot_connect": "Error connecting to http://localhost:%d: %s",
+        "page_not_found": "Page not found at %s",
+        "wrong_status_code": "Status code %d returned from url %s, expected %d."
+      }
+    }
+  },
+  "exercise": {
+    "HELLO_HAPI": "",
+    "ROUTES": "",
+    "HANDLING": "",
+    "DIRECTORIES": "",
+    "VIEWS": "",
+    "PROXIES": "",
+    "HELPING": "",
+    "STREAMS": "",
+    "VALIDATION": "",
+    "VALIDATION USING JOI OBJECT": "",
+    "UPLOADS": "",
+    "COOKIES": "",
+    "AUTH": ""
+  },
+  "exercises": {
+    "VIEWS": {
+      "name_param": "the handling"
+    },
+    "PROXIES": {
+      "greeting": "Hello Proxies"
+    },
+    "HELPING": {
+      "name_param": "Helping Hands"
+    }
+  }
+}
