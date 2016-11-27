@@ -56,7 +56,7 @@ server.views({
 npm install handlebars
 ```
 
-Handlebarsテンプレートを使用することにより、HTML中に変数直接書くことが
+Handlebarsテンプレートを使用することにより、HTML中に変数を直接書くことが
 出来ます。変数は２重の中括弧で囲む形式で記述します。(例: `{{foo}}`)
 
 テンプレートはリクエストから情報を得ます。例えばURLを通じて渡される
