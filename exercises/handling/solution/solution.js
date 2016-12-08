@@ -2,7 +2,16 @@ var Hapi = require('hapi');
 var Inert = require('inert');
 var Path = require('path');
 
-var server = new Hapi.Server();
+var server = new Hapi.Server({
+    connections: {
+        routes: {
+            files: {
+                relativeTo: __dirname
+            }
+        }
+    }
+});
+
 
 server.connection({
     host: 'localhost',
