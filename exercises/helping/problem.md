@@ -1,5 +1,5 @@
 Create a server which responds to requests to `/?name=Helping&suffix=!` using
-the template from the VIEWS exercise.
+the template from the [VIEWS](https://github.com/hapijs/makemehapi/tree/master/exercises/views) exercise.
 
 Instead of placing the query parameter directly in the template, create a helper
 at `helpers/helper.js` and use this helper in the template to output the `name`
@@ -39,7 +39,7 @@ var options = {
 Each file must export a single method with the signature `function(context)` and
 return a string.
 
-```
+```js
 module.exports = function(context) {
     return context.data.root.query.foo;
 }
