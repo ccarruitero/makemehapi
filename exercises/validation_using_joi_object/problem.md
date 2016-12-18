@@ -17,6 +17,8 @@ i)   if ```isGuest``` is false, a ```username``` is required.
 ii)  ```password``` cannot appear together with ```accessToken```.
 iii) if any other parameters than specified above are sent, they should pass the validation.
 
+If the validation is successful, the handler must return a text of `login successful`
+
 -----------------------------------------------------------------
 ##HINTS
 
