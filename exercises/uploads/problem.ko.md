@@ -8,11 +8,11 @@ endpoint는 description과 file이라는 두 개의 키를 필수로 받아야 �
 
 ```json
 {
-  description :  //description from form
+  description :  //form으로부터의 description
   file : {
-    data :    //content of file uploaded
-    filename:  //name of file uploaded
-    headers :   //file header provided by hapi
+    data :    //업로드된 파일의 내용
+    filename:  //업로드된 파일의 이름
+    headers :   //hapi가 제공하는 파일 헤더
   }
 }
 ```
