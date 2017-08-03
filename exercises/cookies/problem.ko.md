@@ -1,20 +1,20 @@
-서버를 만들어봅시다. 'GET' request로 접근 가능한 `set-cookie` 와 `check-cookie` 두 개의 endpoint를 라우트 설정에 추가해주세요.
+서버를 만들어봅시다. 'GET' request로 접근 가능한 `set-cookie`와 `check-cookie` 두 개의 endpoint를 라우트 설정에 추가해주세요.
 
 ```
 /set-cookie
 ```
 
-`set-cookie` endpoint는 'session'이라는 키로 `{ key: 'makemehapi' }` 값을 쿠키에 저장할 것입니다. 쿠키는 `base64json`으로 암호화하고, `10 ms` 이후에는 소멸하도록, `localhost`로 도메인 범위를 지정해주세요. response는 이번 과제에서 별로 중요하지 않으므로, 여러분에게 맡기겠습니다.
+`set-cookie` endpoint는 'session'이라는 키로 `{ key: 'makemehapi' }` 값을 쿠키에 저장할 것입니다. 쿠키는 `base64json`으로 암호화하고, `10 ms`가 지나면 소멸해야 하며, 도메인 범위는 `localhost`여야 합니다. response는 이번 과제에서 별로 중요하지 않으므로, 여러분에게 맡기겠습니다.
 
 ```
 /check-cookie
 ```
 
-`check-cookie` endpoint는 `/set-cookie` endpoint로부터 쿠키를 전달받습니다. 쿠키에 `session` 키가 존재한다면, `{ user: 'hapi' }`를 반환하고 그렇지 않다면, `unauthorized` 접근 오류를 반환하도록 해주세요.
+`check-cookie` endpoint는 `/set-cookie` endpoint로부터 쿠키를 전달받습니다. 쿠키에 `session` 키가 있다면 `{ user: 'hapi' }`를 반환하고, 없다면 `unauthorized` 접근 오류를 반환하도록 해주세요.
 
 --------------------
 
-##힌트
+## 힌트
 
 `server.route()` 함수에 다음과 같은 옵션을 추가하세요.
 

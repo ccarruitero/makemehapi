@@ -20,7 +20,7 @@ Gur Chefhvg bs Uncv-arff
 
 ### 파일
 
-`fs` 모듈은 `createReadStream(pathToFile)`라는 유용한 함수가 있습니다.
+`fs` 모듈은 `createReadStream(pathToFile)`이라는 유용한 함수가 있습니다.
 
 ### 간단한 ROT13
 

@@ -14,7 +14,7 @@
 helper를 사용해서 쿼리 매개변수 `name`과 `suffix`를 결합해주세요.
 
 -----------------------------------------------------------------
-##힌트
+## 힌트
 
 템플릿을 렌더링할 때 `vision` 플러그인을 등록하는 걸 잊지 마세요.
 
@@ -31,7 +31,7 @@ var options = {
 };
 ```
 
-각 파일은 `function(context)` 형식의 메소드를 export 해야 하며, 문자열을 반환해야 합니다.
+각 파일은 `function(context)` 형식의 메서드를 export 해야 하며, 문자열을 반환해야 합니다.
 
 ```
 module.exports = function(context) {
