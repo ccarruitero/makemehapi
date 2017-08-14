@@ -1,0 +1,27 @@
+{
+  "title": "HAPI의 은혜를 누려보자",
+  "subtitle": "\u001b[23m과제를 선택한 다음 \u001b[3m엔터\u001b[23m로 시작하세요",
+  "menu": {
+    "credits": "만든 사람들"
+  },
+  "common": {
+    "exercise": {
+      "fail": {
+        "cannot_connect": "다음 주소로의 접속에 실패하였습니다. http://localhost:%d: %s",
+        "page_not_found": "다음 페이지를 찾을 수 없습니다. %s",
+        "wrong_status_code": "HTTP 상태 코드 %d가 다음 URL로부터 응답하였습니다. %s, 기댓값은 %d입니다."
+      }
+    }
+  },
+  "exercises": {
+    "VIEWS": {
+      "name_param": "the handling"
+    },
+    "PROXIES": {
+      "greeting": "Hello Proxies"
+    },
+    "HELPING": {
+      "name_param": "Helping Hands"
+    }
+  }
+}
