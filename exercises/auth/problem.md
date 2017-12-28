@@ -24,15 +24,14 @@ strategy you configured.
 
 ```js
 server.auth.strategy('simple', 'basic', { validateFunc: validate });
+server.auth.default('simple');
 
 server.route({
     method: 'GET',
     path: '/',
-    config: {
-        auth: 'simple',
-        handler: function (request, reply) {
-            reply();
-        }
+    handler: function (request, h) {
+
+        return 'welcome';
     }
 });
 ```
