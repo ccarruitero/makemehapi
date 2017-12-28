@@ -10,9 +10,7 @@
 ```js
 var H2o2 = require('h2o2');
 
-server.register(H2o2, function (err) {
-    if (err) throw err;
-});
+await server.register(H2o2);
 ```
 
 `proxy` 키를 사용하면 리버스 프락시 handler를 만들 수도 있습니다.

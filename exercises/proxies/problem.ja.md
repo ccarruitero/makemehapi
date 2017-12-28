@@ -15,9 +15,7 @@
 ```js
 var H2o2 = require('h2o2');
 
-server.register(H2o2, function (err) {
-    if (err) throw err;
-});
+await server.register(H2o2);
 ```
 
 ハンドラの`proxy`キーを使用し、リバースプロキシを作ることが出来ます。
