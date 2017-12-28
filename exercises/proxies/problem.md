@@ -13,9 +13,7 @@ order to use the `proxy` configuration:
 ```js
 var H2o2 = require('h2o2');
 
-server.register(H2o2, function (err) {
-    if (err) throw err;
-});
+await server.register(H2o2);
 ```
 
 The `proxy` key can be used to generate a reverse proxy handler.

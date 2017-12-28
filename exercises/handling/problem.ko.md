@@ -17,9 +17,7 @@
 ```js
 var Inert = require('inert');
 
-server.register(Inert, function (err) {
-    if (err) throw err;
-});
+await server.register(Inert);
 ```
 
 함수 대신 객체로 `handler`를 선언할 수도 있습니다. 객체는 다음 항목 중 반드시 하나는 가지고 있어야 합니다. `file`(`inert` 플러그인 필요), `directory`(`inert` 플러그인 필요), `proxy`(`h2o2` 플러그인 필요), `view`(`vision` 플러그인 필요)

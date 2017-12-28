@@ -11,7 +11,7 @@ server.connection({
 
 server.route({
     method: 'GET',
-    path: '/chickens/{breed}',
+    path: '/chickens/{breed?}',
     config: {
         handler: (request, reply) => {
             reply('You asked for the chicken ' + request.params.breed);

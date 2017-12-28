@@ -20,9 +20,7 @@ your code in order to serve static files:
 ```js
 var Inert = require('inert');
 
-server.register(Inert, function (err) {
-    if (err) throw err;
-});
+await server.register(Inert);
 ```
 
 You can declare handlers as objects instead of functions. The object must

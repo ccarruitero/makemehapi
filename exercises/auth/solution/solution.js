@@ -1,35 +1,39 @@
 const Hapi = require('hapi');
 const Auth = require('hapi-auth-basic');
 
-var user = { name: 'hapi', password: 'auth' };
-var server = new Hapi.Server();
+const user = { name: 'hapi',  password: 'auth' };
 
-server.connection({
-    host: 'localhost',
-    port: Number(process.argv[2] || 8080)
-});
-
-var validate = (request, username, password, callback) => {
+const validate = async (request, username, password, h) => {
     var isValid = username === user.name && password === user.password;
 
-    return callback(null, isValid, { name: user.name });
+    return { isValid: isValid, credentials: {name: user.name} };
 };
 
-server.register(Auth, (err) => {
-    server.auth.strategy('simple', 'basic', { validateFunc: validate });
-    server.route({
-        method: 'GET',
-        path: '/',
-        config: {
-            auth: 'simple',
-            handler: (request, reply) => {
-                reply();
-            }
-        }
-    });
+(async () => {
+    try {
+        const server = Hapi.Server({
+            host: 'localhost',
+            port: Number(process.argv[2] || 8080)
+        });
 
-    server.start((err) => {
-        if (err) throw err;
-    });
-});
+        await server.register(Auth);
+
+        server.auth.strategy('simple', 'basic', { validate });
+        server.auth.default('simple');
+
+        server.route({
+            method: 'GET',
+            path: '/',
+            handler: function (request, h) {
+    
+                return 'welcome';
+            }
+        });
+
+        await server.start();
+
+    } catch (error) {
+        console.log(error);
+    }
+})();
 

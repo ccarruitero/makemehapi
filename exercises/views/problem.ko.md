@@ -17,9 +17,7 @@
 ```js
 var Vision = require('vision');
 
-server.register(Vision, function (err) {
-    if (err) throw err;
-});
+await server.register(Vision);
 ```
 
 `view` 키는 response를 만드는데 사용되는 템플릿을 지정하는 데 사용됩니다.

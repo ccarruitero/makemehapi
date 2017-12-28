@@ -1,28 +1,29 @@
-var Hapi = require('hapi');
-var H2o2 = require('h2o2');
+const Hapi = require('hapi');
+const H2o2 = require('h2o2');
 
-var server = new Hapi.Server();
+(async () => {
+    try {
+        const server = Hapi.Server({ 
+            host: 'localhost',
+            port: process.argv[2] || 8080 
+        });
 
-server.connection({
-    host: 'localhost',
-    port: Number(process.argv[2] || 8080)
-});
+        await server.register(H2o2);
 
-server.register(H2o2, (err) => {
-    if (err) throw err;
-});
+        server.route({
+            method: 'GET',
+            path: '/proxy',
+            handler: {
+                proxy: {
+                    host: '127.0.0.1',
+                    port: 65535
+                }
+            }
+        });
 
-server.route({
-    method: 'GET',
-    path: '/proxy',
-    handler: {
-        proxy: {
-            host: '127.0.0.1',
-            port: 65535
-        }
+        await server.start();
+
+    } catch (error) {
+        console.log(error);
     }
-});
-
-server.start((err) => {
-    if (err) throw err;
-});
+})();

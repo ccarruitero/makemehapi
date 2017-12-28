@@ -16,7 +16,7 @@ Gur Chefhvg bs Uncv-arff
 
 ### Stream
 
-The hapi handler `reply` function can accept a stream as an argument.
+The hapi handler return a stream.
 
 ### File
 
