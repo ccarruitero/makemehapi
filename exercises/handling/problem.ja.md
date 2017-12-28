@@ -21,9 +21,7 @@
 ```js
 var Inert = require('inert');
 
-server.register(Inert, function (err) {
-    if (err) throw err;
-});
+await server.register(Inert);
 ```
 
 ハンドラは関数ではなく、オブジェクトとして宣言することが出来ます。
