@@ -10,7 +10,7 @@ const Hapi = require('hapi');
         server.route({
             path: '/',
             method: 'GET',
-            handler: (request) => { 
+            handler: (request, h) => { 
                 return 'Hello World!'; 
             }
         });

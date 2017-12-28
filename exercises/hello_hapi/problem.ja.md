@@ -10,9 +10,7 @@
 
 ```js
 var Hapi = require('hapi');
-var server = new Hapi.Server();
-
-server.connection({
+var server = new Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)
 });
@@ -42,8 +40,8 @@ function handler(request, reply) {
 `start`関数にはコールバックが必要となることに気をつけて下さい。
 
 ```js
-server.start(function () {
-    console.log('Server running at:', server.info.uri);
-});
+await server.start();
+
+console.log('Server running at:', server.info.uri);
 ```
 -----------------------------------------------------------------

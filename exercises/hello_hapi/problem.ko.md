@@ -9,9 +9,7 @@ hapi 서버를 만들어 봅시다. 커맨드 라인으로 포트 번호를 받�
 
 ```js
 var Hapi = require('hapi');
-var server = new Hapi.Server();
-
-server.connection({
+var server = new Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)
 });
@@ -38,8 +36,8 @@ function handler(request, reply) {
 `start` 함수를 호출해서 지정된 포트를 사용하는 서버를 가져오세요. `start` 함수를 호출할 때 콜백을 작성해야 하는 것도 잊지 마세요.
 
 ```js
-server.start(function () {
-    console.log('Server running at:', server.info.uri);
-});
+await server.start();
+
+console.log('Server running at:', server.info.uri);
 ```
 -----------------------------------------------------------------
