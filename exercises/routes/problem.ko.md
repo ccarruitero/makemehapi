@@ -15,8 +15,7 @@ hapi 서버를 만들어봅시다. 커맨드 라인으로 포트 번호를 받�
 
 ```js
 var Hapi = require('hapi');
-var server = new Hapi.Server();
-server.connection({
+var server = new Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)
 });
@@ -25,7 +24,7 @@ server.connection({
 경로 handler를 다음과 같은 코드로 추가해주세요.
 
 ```js
-function handler (request, reply) {
-    reply('Hello ' + request.params.name);
+function handler (request, h) {
+    return `Hello ${request.params.name}`;
 }
 ```

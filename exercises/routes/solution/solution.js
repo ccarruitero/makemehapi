@@ -1,27 +1,32 @@
-var Hapi = require('hapi');
+const Hapi = require('hapi');
 
+(async () => {
+    try {
+        const server = Hapi.Server({ 
+            host: 'localhost',
+            port: Number(process.argv[2] || 8080) 
+        });
 
-var server = new Hapi.Server();
+        server.route({
+            path: '/{name}',
+            method: 'GET',
+            handler: function (request, h) {
+                return `Hello ${request.params.name} `;
+                
+                // a more secure alternative is this:
+                //
+                // return `Hello ${encodeURIComponent(request.params.name)}`;
+                //
+                // encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )
+                // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent 
+                // for more details why you should call encodeURIComponent on any user-entered parameter 
+            }
+        });
 
-server.connection({
-    host: 'localhost',
-    port: Number(process.argv[2] || 8080)
-});
+        await server.start();
 
-server.route({
-    method: 'GET',
-    path: '/{name}',
-    handler: (request, reply) => {
-        reply('Hello ' + request.params.name);
-        // a more secure alternative is this:
-        //
-        //     reply('Hello ' + encodeURIComponent(request.params.name));
-        //
-        // encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )
-        // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent for more details why you should call encodeURIComponent on any user-entered parameter
+        console.log(`Server running at: ${server.info.uri}`);
+    } catch (error) {
+        console.log(error);
     }
-});
-
-server.start((err) => {
-    if (err) throw err;
-});
+})();

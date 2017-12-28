@@ -17,8 +17,7 @@ HTTP GETリクエストに対し、"Hello [name]"を返します。
 
 ```js
 var Hapi = require('hapi');
-var server = new Hapi.Server();
-server.connection({
+var server = new Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)
 });
@@ -27,7 +26,7 @@ server.connection({
 以下のようなコードをルートのハンドラとして追加して下さい。
 
 ```js
-function handler (request, reply) {
-    reply('Hello ' + request.params.name);
+function handler (request, h) {
+    return `Hello  ${request.params.name}`;
 }
 ```
