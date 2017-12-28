@@ -1,34 +1,36 @@
-var Hapi = require('hapi');
-var Vision = require('vision');
-var Path = require('path');
+const Path = require('path');
+const Hapi = require('hapi');
+const Vision = require('vision');
+const Handlebars = require('handlebars');
 
-var server = new Hapi.Server();
+(async () => {
+    try {
+        const server = Hapi.Server({ 
+            host: 'localhost',
+            port: Number(process.argv[2] || 8080) 
+        });
 
-server.connection({
-    host: 'localhost',
-    port: Number(process.argv[2] || 8080)
-});
+        await server.register(Vision);
 
-server.register(Vision, (err) => {
-    if (err) throw err;
-});
+        server.views({
+            engines: { 
+                html: Handlebars
+            },
+            path: Path.join(__dirname, 'templates'),
+            helpersPath: 'helpers'
+        });
+        
+        server.route({
+            path: '/',
+            method: 'GET',
+            handler: {
+                view: 'template.html'
+            }
+        });
 
-server.views({
-    path: Path.join(__dirname, 'templates'),
-    engines: {
-        html: require('handlebars')
-    },
-    helpersPath:  Path.join(__dirname, 'helpers')
-});
+        await server.start();
 
-server.route({
-    method: 'GET',
-    path: '/',
-    handler: {
-        view: 'template.html'
+    } catch (error) {
+        console.log(error);
     }
-});
-
-server.start((err) => {
-    if (err) throw err;
-});
+})();
