@@ -20,9 +20,7 @@
 ```js
 var Vision = require('vision');
 
-server.register(Vision, function (err) {
-    if (err) throw err;
-});
+await server.register(Vision);
 ```
 
 ハンドラのviewキーを使用し、レスポンスの生成に使用するテンプレートを指定します。
