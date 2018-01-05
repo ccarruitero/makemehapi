@@ -17,7 +17,7 @@ const Handlebars = require('handlebars');
                 html: Handlebars
             },
             path: Path.join(__dirname, 'templates'),
-            helpersPath: 'helpers'
+            helpersPath: Path.join(__dirname, 'helpers')
         });
         
         server.route({
