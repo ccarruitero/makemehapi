@@ -22,7 +22,6 @@ function rndport() {
     return 1024 + Math.floor(Math.random() * 64510);
 }
 
-
 // set up the data file to be passed to the submission and start the proxy
 exercise.addSetup(function (mode, callback) {
 
@@ -32,21 +31,29 @@ exercise.addSetup(function (mode, callback) {
     this.submissionArgs = [this.submissionPort];
     this.solutionArgs = [this.solutionPort];
 
-    // start the server being proxied to
-    var Hapi = require('hapi');
-    var server = new Hapi.Server();
-    server.connection({
-        host: 'localhost',
-        port: 65535
-    });
-    server.route({
-        method: 'GET',
-        path: '/proxy',
-        handler: function (request, reply) {
-            reply(exercise.__('greeting'));
+    (async () => {
+        try {
+            // start the server being proxied to
+            var Hapi = require('hapi');
+            var server = new Hapi.Server({
+                host: 'localhost',
+                port: 65535
+            });
+
+            server.route({
+                method: 'GET',
+                path: '/proxy',
+                handler: function (request, reply) {
+                    reply(exercise.__('greeting'));
+                }
+            });
+
+            await server.start();
         }
-    });
-    server.start(function () {});
+        catch (error) {
+            console.log(error)
+        }
+    })();
 
     process.nextTick(callback);
 });
@@ -78,21 +85,21 @@ exercise = comparestdout(exercise)
 
 // delayed for 2000ms to wait for servers to start so we can start
 // playing with them
-function query (mode) {
+function query(mode) {
     var exercise = this
 
-    function verify (port, stream) {
+    function verify(port, stream) {
 
         var url = 'http://localhost:' + port + '/proxy';
 
-        function error (err) {
+        function error(err) {
             var msg = exercise.__('fail.cannot_connect', port, err.code);
             exercise.emit('fail', msg);
         }
 
         hyperquest.get(url)
             .on('error', error)
-            .on('response', function(res) {
+            .on('response', function (res) {
                 if (res.statusCode != 200 && mode == 'verify') {
                     var msg = exercise.__('fail.wrong_status_code', res.statusCode, url, 200);
                     exercise.emit('fail', msg)
