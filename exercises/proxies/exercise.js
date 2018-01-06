@@ -43,8 +43,8 @@ exercise.addSetup(function (mode, callback) {
             server.route({
                 method: 'GET',
                 path: '/proxy',
-                handler: function (request, reply) {
-                    reply(exercise.__('greeting'));
+                handler: (request) => {
+                    return exercise.__('greeting');
                 }
             });
 
