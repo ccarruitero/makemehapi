@@ -1,47 +1,52 @@
-var Hapi = require('hapi');
+(async () => {
+    try {
+        const Hapi = require('hapi');
+        const server = new Hapi.Server({
+            host: 'localhost',
+            port: Number(process.argv[2] || 8080)
+        });
 
-var server = new Hapi.Server();
+        server.route({
+            method: 'POST',
+            path: '/upload',
+            config: {
+                handler: (request, h) => {
+                    return new Promise((resolve, reject) => {
+                        let body = '';
 
-server.connection({
-    port: Number(process.argv[2] || 8080),
-    host: 'localhost'
-});
+                        request.payload.file.on('data', (data) => {
+                            body += data;
+                        });
 
-server.route({
-  method: 'POST',
-  path: '/upload',
-  config: {
-      handler: (request, reply) => {
-          concatStream(request.payload.file, (err, body) => {
-              // On pourrait gérer l’erreur éventuelle ici…
-              var result = {
-                  description: request.payload.description,
-                  file: {
-                      data: body,
-                      filename: request.payload.file.hapi.filename,
-                      headers: request.payload.file.hapi.headers
-                  }
-              };
+                        request.payload.file.on('end', () => {
+                            let result = {
+                                description: request.payload.description,
+                                file: {
+                                    data: body,
+                                    filename: request.payload.file.hapi.filename,
+                                    headers: request.payload.file.hapi.headers
+                                }
+                            };
 
-              reply(JSON.stringify(result));
-          });
-      },
-      payload: {
-          output: 'stream',
-          parse: true,
-          allow: 'multipart/form-data'
-      }
-  }
-});
+                            return resolve(JSON.stringify(result));
+                        });
 
-function concatStream(src, cb) {
-    var body = [];
-    src.on('data', (chunk) => { body.push(chunk.toString('utf-8')); });
-    src.on('end', (chunk) => { cb(null, body.join('')) });
-    src.on('error', (err) => { cb(err); })
-}
+                        request.payload.file.on('error', (err) => {
+                            return reject(err);
+                        });
+                    });
+                },
+                payload: {
+                    output: 'stream',
+                    parse: true,
+                    allow: 'multipart/form-data'
+                }
+            }
+        });
 
-server.start((err) => {
-    if (err) throw err;
-});
-
+        await server.start();
+    }
+    catch (error) {
+        console.log(error)
+    }
+})();
