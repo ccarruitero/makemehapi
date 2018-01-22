@@ -14,9 +14,7 @@ sauf si on lui passe un numéro de port explicite via la ligne de commande,
 
 ```js
 var Hapi = require('hapi');
-var server = new Hapi.Server();
-
-server.connection({
+var server = new Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)
 });
@@ -47,6 +45,8 @@ Pour que le serveur commence à écouter sur le port défini au préalable,
 appelez la fonction `start()` :
 
 ```js
-server.start(function () {});
+await server.start();
+
+console.log(`Serveur fonctionnant à: ${server.info.uri}`);
 ```
 -----------------------------------------------------------------

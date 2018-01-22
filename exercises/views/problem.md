@@ -20,9 +20,7 @@ order to render your templates:
 ```js
 var Vision = require('vision');
 
-server.register(Vision, function (err) {
-    if (err) throw err;
-});
+await server.register(Vision);
 ```
 
 The `view` key can be used to define the template to be used to generate the

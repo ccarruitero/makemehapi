@@ -20,8 +20,7 @@ line, with the following code:
 
 ```js
 var Hapi = require('hapi');
-var server = new Hapi.Server();
-server.connection({
+var server = new Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)
 });
@@ -30,7 +29,7 @@ server.connection({
 Add a route handler similar to the following:
 
 ```js
-function handler (request, reply) {
-    reply('Hello ' + request.params.name);
+function handler (request, h) {
+    return `Hello ${request.params.name}`;
 }
 ```

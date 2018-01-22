@@ -12,12 +12,11 @@ line, with the following code:
 
 ```js
 var Hapi = require('hapi');
-var server = new Hapi.Server();
-
-server.connection({
+var server = new Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)
 });
+
 ```
 
 Routes are added via the `route` function:
@@ -30,21 +29,21 @@ Handlers can be anonymous functions or separately declared (just like in
 javascript :P), but all of them should have this signature:
 
 ```js
-function handler(request, reply) {
+function handler(request, h) {
 
     // Request has all information
-    // Reply handles client response
+    // a string can be returned
 
-    reply();
+    return 'a string in the response';
 }
 ```
 
 Calling the `start` function gets a server listening on the assigned port. Note
-that a callback is required when calling `start`:
+that await is required when calling `start`:
 
 ```js
-server.start(function () {
-    console.log('Server running at:', server.info.uri);
-});
+await server.start();
+
+console.log('Server running at:', server.info.uri);
 ```
 -----------------------------------------------------------------
