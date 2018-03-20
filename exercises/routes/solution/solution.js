@@ -11,7 +11,7 @@ const Hapi = require('hapi');
             path: '/{name}',
             method: 'GET',
             handler: function (request, h) {
-                return `Hello ${request.params.name} `;
+                return `Hello ${request.params.name}`;
                 
                 // a more secure alternative is this:
                 //
