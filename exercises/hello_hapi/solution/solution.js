@@ -11,7 +11,7 @@ const Hapi = require('hapi');
             path: '/',
             method: 'GET',
             handler: (request, h) => { 
-                return 'Hello World!'; 
+                return 'Hello hapi'; 
             }
         });
 
