@@ -58,10 +58,6 @@ handler: function (request, reply) {
 ```
 
 Vous trouverez plus d’information sur le téléversement de fichiers dans la
-documentation API pour l’interface de réponse :
-
-  {rootdir:node_modules/hapi/API.md}
-
-  ou
+documentation API pour l’interface de réponse:
 
   [la doc API en ligne](http://hapijs.com/api#reply-interface)

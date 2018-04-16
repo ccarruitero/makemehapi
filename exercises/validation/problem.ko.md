@@ -33,7 +33,7 @@ var routeConfig = {
 
 route에 관한 정보는 여기서 확인하세요.
 
-    {rootdir:/node_modules/hapi/API.md}
+    https://hapijs.com/api
 
 Joi에 관한 정보는 여기서 확인하세요.
 

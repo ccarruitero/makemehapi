@@ -46,7 +46,7 @@ var routeConfig = {
 
 ルートに関する情報は以下を参照して下さい。
 
-    {rootdir:/node_modules/hapi/API.md}
+    https://hapijs.com/api
 
 Joiの情報は以下にあります。
 

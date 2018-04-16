@@ -48,9 +48,7 @@ var routeConfig = {
 }
 ```
 
-Toutes les façons de configurer une route sont consultables ici :
-
-    {rootdir:/node_modules/hapi/API.md}
+Toutes les façons de configurer une route sont consultables [ici](https://hapijs.com/api).
 
 Les informations sur les objets de validation Joi sont consutlables ici :
 
