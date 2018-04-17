@@ -1,6 +1,6 @@
 {
   "name": "makemehapi",
-  "version": "7.0.2",
+  "version": "7.0.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/hapijs/makemehapi"
