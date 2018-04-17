@@ -62,10 +62,6 @@ var session = request.state.session;
 ```
 
 Vous trouverez davantage d’informations sur la gestion des cookies dans la
-documentation de l’API de Hapi, soit en local :
-
-  {rootdir:/node_modules/hapi/API.md}
-
-soit en ligne :
+documentation de l’API de Hapi en ligne:
 
   [Documentation API](http://hapijs.com/api)

@@ -57,7 +57,7 @@ var session = request.state.session;
 ```
 
 More information about handling of cookies in `hapi` can be found in the Hapi
-directory in `node_modules` here [API](http://hapijs.com/api).
+documentation here [API](http://hapijs.com/api).
 
 While not required for this exercise, you may use [Boom](https://www.npmjs.com/package/boom)
 to more easily return an `unauthorized` error along with the correct HTTP status

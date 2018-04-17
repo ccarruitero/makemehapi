@@ -38,9 +38,7 @@ var routeConfig = {
 }
 ```
 
-All route information can be found here:
-
-    {rootdir:/node_modules/hapi/API.md}
+All route information can be found [here](https://hapijs.com/api).
 
 Joi
 
