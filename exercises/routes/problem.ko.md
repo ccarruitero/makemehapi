@@ -15,7 +15,7 @@ hapi 서버를 만들어봅시다. 커맨드 라인으로 포트 번호를 받�
 
 ```js
 var Hapi = require('hapi');
-var server = new Hapi.Server({
+var server = Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)
 });
