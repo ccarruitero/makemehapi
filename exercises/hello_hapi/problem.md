@@ -12,7 +12,7 @@ line, with the following code:
 
 ```js
 var Hapi = require('hapi');
-var server = new Hapi.Server({
+var server = Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)
 });

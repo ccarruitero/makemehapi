@@ -26,7 +26,7 @@ sauf si on lui passe un numéro de port explicite via la ligne de commande,
 
 ```js
 var Hapi = require('hapi');
-var server = new Hapi.Server({
+var server = Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)
 });
