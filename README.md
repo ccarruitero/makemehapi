@@ -2,8 +2,6 @@
 
 [![NPM](https://nodei.co/npm/makemehapi.png?downloads=true&stars=true)](https://nodei.co/npm/makemehapi/)
 
-Lead Maintainer: [Matt Hernandez](https://github.com/fiveisprime)
-
 Learn all about [hapi](http://hapijs.com) through a series of self-guided
 challenges.
 
