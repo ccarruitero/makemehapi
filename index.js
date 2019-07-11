@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var Workshopper = require('workshopper');
+var Workshopper = require('workshopper-adventure');
 var path = require('path');
 var credits = require('./credits');
 
@@ -10,7 +10,7 @@ function fpath (f) {
   return path.join(__dirname, f);
 }
 
-Workshopper({
+const workshopper = Workshopper({
     name : name,
     exerciseDir : fpath('./exercises/'),
     appDir : __dirname,
@@ -21,3 +21,7 @@ Workshopper({
         handler : credits
     }]
 });
+
+workshopper.addAll(require('./exercises/menu.json'));
+
+module.exports = workshopper;
