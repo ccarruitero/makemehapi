@@ -4,33 +4,32 @@ const Vision = require('vision');
 const Handlebars = require('handlebars');
 
 (async () => {
-    try {
-        const server = Hapi.Server({ 
-            host: 'localhost',
-            port: Number(process.argv[2] || 8080) 
-        });
+  try {
+    const server = Hapi.Server({
+      host: 'localhost',
+      port: Number(process.argv[2] || 8080)
+    });
 
-        await server.register(Vision);
+    await server.register(Vision);
 
-        server.views({
-            engines: { 
-                html: Handlebars
-            },
-            path: Path.join(__dirname, 'templates'),
-            helpersPath: Path.join(__dirname, 'helpers')
-        });
-        
-        server.route({
-            path: '/',
-            method: 'GET',
-            handler: {
-                view: 'template.html'
-            }
-        });
+    server.views({
+      engines: {
+        html: Handlebars
+      },
+      path: Path.join(__dirname, 'templates'),
+      helpersPath: Path.join(__dirname, 'helpers')
+    });
 
-        await server.start();
+    server.route({
+      path: '/',
+      method: 'GET',
+      handler: {
+        view: 'template.html'
+      }
+    });
 
-    } catch (error) {
-        console.log(error);
-    }
+    await server.start();
+  } catch (error) {
+    console.log(error);
+  }
 })();

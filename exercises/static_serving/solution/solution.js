@@ -1,1 +1,1 @@
-//setup a static server
+// setup a static server

@@ -1,15 +1,15 @@
 [
-    "HELLO_HAPI",
-    "ROUTES",
-    "HANDLING",
-    "DIRECTORIES",
-    "VIEWS",
-    "PROXIES",
-    "HELPING",
-    "STREAMS",
-    "VALIDATION",
-    "VALIDATION USING JOI OBJECT",
-    "UPLOADS",
-    "COOKIES",
-    "AUTH"
+  "HELLO_HAPI",
+  "ROUTES",
+  "HANDLING",
+  "DIRECTORIES",
+  "VIEWS",
+  "PROXIES",
+  "HELPING",
+  "STREAMS",
+  "VALIDATION",
+  "VALIDATION USING JOI OBJECT",
+  "UPLOADS",
+  "COOKIES",
+  "AUTH"
 ]
