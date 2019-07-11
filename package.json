@@ -18,7 +18,9 @@
   "description": "Self guided workshops to teach you about hapi.",
   "main": "index.js",
   "scripts": {
-    "start": "node makemehapi.js"
+    "start": "node ./bin/makemehapi.js",
+    "lint": "standard",
+    "test": "workshopper-adventure-test"
   },
   "dependencies": {
     "bl": "^1.0.0",
@@ -46,5 +48,9 @@
     "hapijs",
     "hapi"
   ],
-  "preferGlobal": true
+  "preferGlobal": true,
+  "devDependencies": {
+    "standard": "^13.0.0",
+    "workshopper-adventure-test": "^1.1.2"
+  }
 }
