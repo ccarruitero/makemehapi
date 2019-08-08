@@ -57,6 +57,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "standard": "^13.0.0",
-    "workshopper-adventure-test": "^1.1.2"
+    "workshopper-adventure-test": "git://github.com/ccarruitero/workshopper-adventure-test.git#update"
   }
 }
