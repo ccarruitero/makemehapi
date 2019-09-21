@@ -29,7 +29,7 @@
     "boom": "^7.3.0",
     "colors-tmpl": "^1.0.0",
     "combined-stream": "^1.0.8",
-    "form-data": "^2.3.1",
+    "form-data": "^2.5.1",
     "h2o2": "7.x.x",
     "handlebars": "^4.1.2",
     "hyperquest": "^2.1.3",
