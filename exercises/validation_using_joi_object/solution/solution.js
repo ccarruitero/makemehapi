@@ -1,5 +1,5 @@
 const Hapi = require('@hapi/hapi');
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 
 (async () => {
   try {

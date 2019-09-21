@@ -1,5 +1,5 @@
 const Hapi = require('@hapi/hapi');
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 
 (async () => {
   try {
@@ -14,9 +14,9 @@ const Joi = require('joi');
       config: {
         handler: (request, h) => `You asked for the chicken ${request.params.breed}`,
         validate: {
-          params: {
+          params: Joi.object({
             breed: Joi.string().required()
-          }
+          })
         }
       }
     });
