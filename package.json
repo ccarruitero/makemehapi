@@ -25,7 +25,7 @@
   "dependencies": {
     "@hapi/basic": "^5.1.1",
     "@hapi/hapi": "^18.4.0",
-    "bl": "^1.0.0",
+    "bl": "^4.0.0",
     "boom": "7.x.x",
     "colors-tmpl": "^1.0.0",
     "combined-stream": "^1.0.5",
