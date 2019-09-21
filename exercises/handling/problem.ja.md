@@ -19,7 +19,7 @@
 コードの中でプラグインをhapiに登録する必要があります。
 
 ```js
-var Inert = require('inert');
+var Inert = require('@hapi/inert');
 
 await server.register(Inert);
 ```

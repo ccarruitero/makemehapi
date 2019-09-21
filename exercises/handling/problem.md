@@ -18,7 +18,7 @@ for serving static files and directories. You'll need to register the plugin in
 your code in order to serve static files:
 
 ```js
-var Inert = require('inert');
+var Inert = require('@hapi/inert');
 
 await server.register(Inert);
 ```

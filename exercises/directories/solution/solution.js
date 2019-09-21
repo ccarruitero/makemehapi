@@ -1,6 +1,6 @@
 const Path = require('path');
 const Hapi = require('@hapi/hapi');
-const Inert = require('inert');
+const Inert = require('@hapi/inert');
 
 (async () => {
   try {

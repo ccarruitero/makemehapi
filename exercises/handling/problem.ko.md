@@ -15,7 +15,7 @@
 이번 과제에는 `inert` 모듈이 필요합니다. 이 모듈은 hapi 플러그인으로, 정적 파일과 디렉터리를 다룹니다. 정적 파일을 서비스하려면 플러그인을 코드에 등록해야 합니다.
 
 ```js
-var Inert = require('inert');
+var Inert = require('@hapi/inert');
 
 await server.register(Inert);
 ```
