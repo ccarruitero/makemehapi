@@ -14,10 +14,10 @@ Basic認証を扱うhapiのプラグインがあります。以下のコマン�
 して下さい。
 
 ```sh
-npm install hapi-auth-basic
+npm install @hapi/basic
 ```
 
-'`hapi-auth-basic`'プラグインを登録し、`basic`認証ストラテジを名前を
+'`@hapi/basic`'プラグインを登録し、`basic`認証ストラテジを名前を
 付けて設定して下さい。設定が完了すれば、その認証ストラテジの名前に対し、
 '`auth`'プロパティをルートコンフィギュレーション中で設定して下さい。
 

@@ -14,10 +14,10 @@ status code when authentication fails.
 There is a hapi plugin for handling basic authentication. Install it by running:
 
 ```sh
-npm install hapi-auth-basic
+npm install @hapi/basic
 ```
 
-You'll need to register the `hapi-auth-basic` plugin then configure a named
+You'll need to register the `@hapi/basic` plugin then configure a named
 authentication strategy for `basic`. Once authentication is configured, you'll
 need to set the `auth` property in the route configuration to the name of the
 strategy you configured.
@@ -38,5 +38,5 @@ server.route({
 
 Hapi-auth-basic information can be found here:
 
-    {rootdir:/node_modules/hapi-auth-basic/README.md}
+    {rootdir:/node_modules/@hapi/basic/README.md}
 
