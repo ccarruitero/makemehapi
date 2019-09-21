@@ -26,7 +26,7 @@
     "@hapi/basic": "^5.1.1",
     "@hapi/hapi": "^18.4.0",
     "bl": "^4.0.0",
-    "boom": "7.x.x",
+    "boom": "^7.3.0",
     "colors-tmpl": "^1.0.0",
     "combined-stream": "^1.0.5",
     "form-data": "^2.3.1",
