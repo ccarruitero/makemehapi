@@ -19,7 +19,7 @@ Create a server that listens on port `8080`, if none is passed from the command
 line, with the following code:
 
 ```js
-var Hapi = require('hapi');
+var Hapi = require('@hapi/hapi');
 var server = Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)

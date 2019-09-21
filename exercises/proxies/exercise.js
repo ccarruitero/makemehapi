@@ -30,7 +30,7 @@ exercise.addSetup(function (mode, callback) {
   (async () => {
     try {
       // start the server being proxied to
-      const Hapi = require('hapi');
+      const Hapi = require('@hapi/hapi');
       const server = new Hapi.Server({
         host: 'localhost',
         port: 65535

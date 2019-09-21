@@ -1,4 +1,4 @@
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 const H2o2 = require('h2o2');
 
 (async () => {

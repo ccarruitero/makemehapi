@@ -23,6 +23,7 @@
     "test": "workshopper-adventure-test"
   },
   "dependencies": {
+    "@hapi/basic": "^5.1.1",
     "bl": "^1.0.0",
     "boom": "7.x.x",
     "colors-tmpl": "^1.0.0",
@@ -30,7 +31,6 @@
     "form-data": "^2.3.1",
     "h2o2": "7.x.x",
     "handlebars": "^4.1.2",
-    "hapi": "17.x.x",
     "hapi-auth-basic": "5.x.x",
     "hyperquest": "^2.1.3",
     "inert": "5.x.x",

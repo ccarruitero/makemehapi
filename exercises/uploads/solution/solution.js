@@ -1,6 +1,6 @@
 (async () => {
   try {
-    const Hapi = require('hapi');
+    const Hapi = require('@hapi/hapi');
     const server = new Hapi.Server({
       host: 'localhost',
       port: Number(process.argv[2] || 8080)

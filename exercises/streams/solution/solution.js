@@ -1,5 +1,5 @@
 const Fs = require('fs');
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 const Path = require('path');
 const Rot13 = require('rot13-transform');
 

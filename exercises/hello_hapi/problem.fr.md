@@ -13,7 +13,7 @@ sauf si on lui passe un numéro de port explicite via la ligne de commande,
 à l’aide du code suivant :
 
 ```js
-var Hapi = require('hapi');
+var Hapi = require('@hapi/hapi');
 var server = Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)

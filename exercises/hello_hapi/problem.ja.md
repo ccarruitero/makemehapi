@@ -9,7 +9,7 @@
 以下のコードでは、コマンドラインから何も渡されなかった場合ポート`8080`をlistenします。
 
 ```js
-var Hapi = require('hapi');
+var Hapi = require('@hapi/hapi');
 var server = Hapi.Server({
     host: 'localhost',
     port: Number(process.argv[2] || 8080)

@@ -1,4 +1,4 @@
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 const Auth = require('hapi-auth-basic');
 
 const user = { name: 'hapi', password: 'auth' };
