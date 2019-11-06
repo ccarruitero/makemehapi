@@ -3,7 +3,7 @@
   "version": "7.1.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hapijs/makemehapi"
+    "url": "git://github.com/ccarruitero/makemehapi"
   },
   "licenses": [
     {
@@ -11,7 +11,9 @@
       "url": "http://github.com/hapijs/makemehapi/raw/master/LICENSE"
     }
   ],
-  "bin": "./bin/makemehapi",
+  "bin": {
+    "makemehapi": "./bin/makemehapi"
+  },
   "engines": {
     "node": ">=0.10.32"
   },
@@ -20,7 +22,8 @@
   "scripts": {
     "start": "node ./bin/makemehapi.js",
     "lint": "eslint *.js exercises/**/**/*.js",
-    "test": "workshopper-adventure-test"
+    "test": "workshopper-adventure-test",
+    "release": "standard-version"
   },
   "dependencies": {
     "@hapi/basic": "^5.1.1",
@@ -57,6 +60,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "standard": "^14.3.1",
+    "standard-version": "^7.0.0",
     "workshopper-adventure-test": "git://github.com/ccarruitero/workshopper-adventure-test.git#update"
   }
 }
