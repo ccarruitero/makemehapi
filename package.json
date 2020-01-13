@@ -34,7 +34,7 @@
     "handlebars": "^4.7.2",
     "hyperquest": "^2.1.3",
     "rot13-transform": "^1.0.0",
-    "through2": "^2.0.0",
+    "through2": "^3.0.1",
     "vision": "5.x.x",
     "workshopper-adventure": "^6.0.4",
     "workshopper-boilerplate": "^1.1.2",
