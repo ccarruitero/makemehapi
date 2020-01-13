@@ -5,12 +5,7 @@
     "type": "git",
     "url": "git://github.com/ccarruitero/makemehapi"
   },
-  "licenses": [
-    {
-      "type": "BSD",
-      "url": "http://github.com/hapijs/makemehapi/raw/master/LICENSE"
-    }
-  ],
+  "license": "BSD",
   "bin": {
     "makemehapi": "./bin/makemehapi"
   },
