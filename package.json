@@ -37,7 +37,6 @@
     "through2": "^3.0.1",
     "vision": "5.x.x",
     "workshopper-adventure": "^6.0.4",
-    "workshopper-boilerplate": "^1.1.2",
     "workshopper-exercise": "^3.0.1",
     "workshopper-wrappedexec": "^0.1.3"
   },
