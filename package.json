@@ -23,7 +23,7 @@
   "dependencies": {
     "@hapi/basic": "^6.0.0",
     "@hapi/h2o2": "^9.0.1",
-    "@hapi/hapi": "^19.0.3",
+    "@hapi/hapi": "^19.1.1",
     "@hapi/inert": "^6.0.1",
     "@hapi/joi": "^17.0.2",
     "bl": "^4.0.0",
