@@ -51,6 +51,12 @@ exercise.addProcessor(function (mode, callback) {
 // compare stdout of solution and submission
 exercise = comparestdout(exercise);
 
+function killChild (exercise) {
+  [ exercise.submissionChild, exercise.solutionChild ].forEach(function (child) {
+    if (child && typeof child.kill == 'function') child.kill()
+  })
+}
+
 // delayed for 2000ms to wait for servers to start so we can start
 // playing with them
 function query (mode) {
@@ -60,6 +66,7 @@ function query (mode) {
     function error (err) {
       const msg = exercise.__('fail.cannot_connect', port, err.code);
       exercise.emit('fail', msg);
+      killChild(exercise);
     }
 
     hyperquest.get(`http://localhost:${port}/`)
