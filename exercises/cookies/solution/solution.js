@@ -24,7 +24,7 @@ const Boom = require('boom');
       handler: (request, h) => h.response({
         message: 'success'
       }).state('session', { key: 'makemehapi' }),
-      config: {
+      options: {
         state: {
           parse: true,
           failAction: 'log'
