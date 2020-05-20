@@ -40,3 +40,12 @@ Be careful: in practice, you'll need to provide an absolute path to an
 `index.html` file in your program's directory. To achieve this, you'll probably
 need the `path` core module, its `join()` function, and the `__dirname` global
 variable.
+
+You can also configure a files base path in your server and just pass relative
+paths in the route. This is specially useful if you have multiple routes that
+respond with files.
+
+## Docs
+
+- Hapi - Route options: https://hapi.dev/api#route-options
+- Hapi - Serving Static Content Tutorial: https://hapi.dev/tutorials/servingfiles
