@@ -1,5 +1,5 @@
 const Hapi = require('@hapi/hapi');
-const Boom = require('boom');
+const Boom = require('@hapi/boom');
 
 (async () => {
   try {
