@@ -7,9 +7,12 @@
   "common": {
     "exercise": {
       "fail": {
-        "cannot_connect": "エラー。サーバーに接続出来ませんでした。URL-> http://localhost:%d: %s",
-        "page_not_found": "ページが見つかりません。URL-> %s",
-        "wrong_status_code": "ステータスコード %d が返されました。URL-> %s (期待値は %d)"
+        "cannot_connect": "エラー。サーバーに接続出来ませんでした。URL-> http://localhost:{{port}}: {{url}}",
+        "page_not_found": "ページが見つかりません。URL-> {{url}}",
+        "wrong_status_code": "ステータスコード {{statusCode}} が返されました。URL-> {{url}} (期待値は {{expected}})"
+      },
+      "pass": {
+        "status_code": "ステータスコードは正しい"
       }
     }
   },

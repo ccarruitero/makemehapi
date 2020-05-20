@@ -7,9 +7,12 @@
   "common": {
     "exercise": {
       "fail": {
-        "cannot_connect": "Erro ao conectar em http://localhost:%d: %s",
-        "page_not_found": "Página não encontrada em %s",
-        "wrong_status_code": "Código de status %d retornado da url %s, esperado %d."
+        "cannot_connect": "Erro ao conectar em http://localhost:{{port}}: {{code}}",
+        "page_not_found": "Página não encontrada em {{url}}",
+        "wrong_status_code": "Código de status {{statusCode}} retornado da url {{url}}, esperado {{expected}}."
+      },
+      "pass": {
+        "status_code": "Código de status é correto"
       }
     }
   },
