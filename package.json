@@ -17,7 +17,7 @@
   "scripts": {
     "start": "node ./bin/makemehapi.js",
     "lint": "eslint *.js exercises/**/**/*.js i18n/**/*.json",
-    "test": "workshopper-adventure-test",
+    "test": "npm run lint && workshopper-adventure-test",
     "release": "standard-version"
   },
   "dependencies": {
