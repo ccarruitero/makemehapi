@@ -18,7 +18,7 @@ const Hapi = require('@hapi/hapi');
         //
         // 'encodeURIComponent'は以下の文字以外、全ての文字をエスケープします。
         //    * 英数字
-        //    * 右の記号　 - _ . ! ~ * ' ( )
+        //    * 右の記号 - _ . ! ~ * ' ( )
         // ユーザーの入力パラメータに対し、'encodeURIComponent'を使用すべき理由は
         // 以下を参照して下さい。
         //   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
