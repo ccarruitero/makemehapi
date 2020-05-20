@@ -46,6 +46,12 @@ const Boom = require('@hapi/boom');
         }
 
         return result;
+      },
+      options: {
+        state: {
+          parse: true,
+          failAction: 'log'
+        }
       }
     });
 
