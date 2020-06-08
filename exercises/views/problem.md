@@ -13,12 +13,12 @@ located at `templates/index.html` which outputs the following HTML:
 -----------------------------------------------------------------
 ##HINTS
 
-This exercise requires you to install the `vision` module, which is a hapi plugin
-for rendering templates. You'll need to register the plugin in your code in
-order to render your templates:
+This exercise requires you to install the `@hapi/vision` module, which is a hapi
+plugin for rendering templates. You'll need to register the plugin in your code
+in order to render your templates:
 
 ```js
-var Vision = require('vision');
+var Vision = require('@hapi/vision');
 
 await server.register(Vision);
 ```

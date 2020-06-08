@@ -1,6 +1,6 @@
 const Path = require('path');
 const Hapi = require('@hapi/hapi');
-const Vision = require('vision');
+const Vision = require('@hapi/vision');
 const Handlebars = require('handlebars');
 
 (async () => {

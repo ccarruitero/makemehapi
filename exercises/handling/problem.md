@@ -13,9 +13,9 @@ Create a server which responds to requests to `/` with a static HTML file named
 -----------------------------------------------------------------
 ##HINTS
 
-This exercise requires you to install the `inert` module, which is a hapi plugin
-for serving static files and directories. You'll need to register the plugin in
-your code in order to serve static files:
+This exercise requires you to install the `@hapi/inert` module, which is a hapi
+plugin for serving static files and directories. You'll need to register the
+plugin in your code in order to serve static files:
 
 ```js
 var Inert = require('@hapi/inert');
@@ -24,9 +24,9 @@ await server.register(Inert);
 ```
 
 You can declare handlers as objects instead of functions. The object must
-contain one of the following: `file` (requires `inert` plugin), `directory`
-(requires `inert` plugin), `proxy` (requires `h2o2` plugin), or `view` (requires
-`vision` plugin).
+contain one of the following: `file` (requires `@hapi/inert` plugin), `directory`
+(requires `@hapi/inert` plugin), `proxy` (requires `@hapi/h2o2` plugin), or
+`view` (requires `@hapi/vision` plugin).
 
 For example, `handler` can be assigned an object with the `file` key:
 

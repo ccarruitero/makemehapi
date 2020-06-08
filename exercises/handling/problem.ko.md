@@ -20,7 +20,7 @@ var Inert = require('@hapi/inert');
 await server.register(Inert);
 ```
 
-함수 대신 객체로 `handler`를 선언할 수도 있습니다. 객체는 다음 항목 중 반드시 하나는 가지고 있어야 합니다. `file`(`inert` 플러그인 필요), `directory`(`inert` 플러그인 필요), `proxy`(`h2o2` 플러그인 필요), `view`(`vision` 플러그인 필요)
+함수 대신 객체로 `handler`를 선언할 수도 있습니다. 객체는 다음 항목 중 반드시 하나는 가지고 있어야 합니다. `file`(`@hapi/inert` 플러그인 필요), `directory`(`@hapi/inert` 플러그인 필요), `proxy`(`@hapi/h2o2` 플러그인 필요), `view`(`@hapi/vision` 플러그인 필요)
 
 다음과 같이 `handler`에 `file` 키를 갖는 객체를 설정할 수 있습니다.
 

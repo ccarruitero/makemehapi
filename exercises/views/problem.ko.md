@@ -12,10 +12,10 @@
 -----------------------------------------------------------------
 ## 힌트
 
-이번 과제는 `vision`이 필요하므로 설치해주세요. 이 모듈은 템플릿을 렌더링하는 hapi 플러그인 입니다. 다음과 같이 플러그인을 등록하세요.
+이번 과제는 `@hapi/vision`이 필요하므로 설치해주세요. 이 모듈은 템플릿을 렌더링하는 hapi 플러그인 입니다. 다음과 같이 플러그인을 등록하세요.
 
 ```js
-var Vision = require('vision');
+var Vision = require('@hapi/vision');
 
 await server.register(Vision);
 ```
