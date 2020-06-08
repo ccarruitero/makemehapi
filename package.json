@@ -56,6 +56,6 @@
     "eslint-plugin-standard": "^4.0.0",
     "standard": "^14.3.3",
     "standard-version": "^8.0.0",
-    "workshopper-adventure-test": "git://github.com/ccarruitero/workshopper-adventure-test.git#exercises"
+    "workshopper-adventure-test": "^1.2.0"
   }
 }
