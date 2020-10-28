@@ -54,7 +54,7 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "standard": "^14.3.3",
+    "standard": "^15.0.1",
     "standard-version": "^8.0.0",
     "workshopper-adventure-test": "^1.2.0"
   }
