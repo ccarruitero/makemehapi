@@ -53,7 +53,7 @@
     "eslint-plugin-json": "^2.0.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-standard": "^5.0.0",
     "standard": "^16.0.3",
     "standard-version": "^9.0.0",
     "workshopper-adventure-test": "^1.2.0"
