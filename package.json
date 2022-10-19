@@ -28,7 +28,7 @@
     "@hapi/inert": "^6.0.1",
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "^6.0.0",
-    "bl": "^5.0.0",
+    "bl": "^6.0.0",
     "colors-tmpl": "^1.0.0",
     "combined-stream": "^1.0.8",
     "form-data": "^4.0.0",
