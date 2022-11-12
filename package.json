@@ -27,7 +27,7 @@
     "@hapi/hapi": "^21.0.0",
     "@hapi/inert": "^7.0.0",
     "@hapi/joi": "^17.1.1",
-    "@hapi/vision": "^6.0.0",
+    "@hapi/vision": "^7.0.0",
     "bl": "^5.0.0",
     "colors-tmpl": "^1.0.0",
     "combined-stream": "^1.0.8",
